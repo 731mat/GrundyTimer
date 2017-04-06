@@ -1,0 +1,30 @@
+{block content}
+    <a n:href="add" role="button" class="btn btn-default" >Přidat</a>
+    <table class="table table-bordered table-striped">
+        <thead>
+        <tr>
+            <th>id</th>
+            <th>nazev</th>
+            <th class="text-center">Akce</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr n:foreach="$data as $kategorie">
+            <td>{$kategorie->id}</td>
+            <td>{$kategorie->name}</td>
+            <td><a n:href="edit $kategorie->id" class="btn btn-primary" role="button"><i class="fa fa-edit"></i> edit</a>
+                <a n:href="delete $kategorie->id" class="btn btn-danger" role="button" onclick="return confirm('Opravdu to chceš?');"><i class="fa fa-trash"></i> Smazat</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+{/block}
+
+{block scripts}
+    {include parent}
+{/block}
+
+
+{block head}
+{/block}

@@ -1,0 +1,9 @@
+parameters:
+
+
+database:
+	dsn: 'mysql:host=127.0.0.1;dbname=grundybike'
+	user: 'root'
+	password: 'mat'
+	options:
+		lazy: yes

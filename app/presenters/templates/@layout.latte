@@ -1,0 +1,44 @@
+{**
+ * @param string   $basePath web base path
+ * @param array    $flashes  flash messages
+ *}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>{ifset title}{include title|stripHtml} | {/ifset}GRUNDYbike	</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="{$basePath}/css/style.css">
+	<link rel="stylesheet" href="{$basePath}/css/bootstrap.min.css">
+	{block head}{/block}
+</head>
+
+<body>
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#">GrundyBike</a>
+			</div>
+			<ul class="nav navbar-nav">
+				<li><a n:href="Soutezici:default">Soutěžící</a></li>
+				<li><a n:href="Kategorie:default">Kategorie</a></li>
+			</ul>
+		</div>
+	</nav>
+	<div class="container">
+
+
+	<div n:foreach="$flashes as $flash" n:class="flash, $flash->type">{$flash->message}</div>
+
+	{include content}
+	</div>
+	{block scripts}
+	<script src="{$basePath}/js/jquery.min.js"></script>
+	<script src="{$basePath}/js/bootstrap.min.js"></script>
+	<script src="https://nette.github.io/resources/js/netteForms.min.js"></script>
+	<script src="{$basePath}/js/main.js"></script>
+	{/block}
+</body>
+</html>

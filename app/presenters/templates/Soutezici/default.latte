@@ -1,0 +1,35 @@
+{block content}
+    <a n:href="add" role="button" class="btn btn-default" >Přidat</a>
+    <table class="table table-bordered table-striped">
+        <thead>
+        <tr>
+            <th>Startovní číslo</th>
+            <th>Jmeno</th>
+            <th>Přijmení</th>
+            <th>datum narození</th>
+            <th>kategorie</th>
+            <th class="text-center">Akce</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr n:foreach="$data as $soutezici">
+            <td>{$soutezici->start_number}</td>
+            <td>{$soutezici->first_name}</td>
+            <td>{$soutezici->last_name}</td>
+            <td>{$soutezici->birth_year}</td>
+            <td>{$kategorie[$soutezici->category]}</td>
+            <td><a n:href="edit $soutezici->id" class="btn btn-primary" role="button"><i class="fa fa-edit"></i> edit</a>
+                <a n:href="delete $soutezici->id" class="btn btn-danger" role="button" onclick="return confirm('Opravdu to chceš?');"><i class="fa fa-trash"></i> Smazat</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+{/block}
+
+{block scripts}
+    {include parent}
+{/block}
+
+
+{block head}
+{/block}
