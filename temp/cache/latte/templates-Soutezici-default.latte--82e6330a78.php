@@ -49,7 +49,7 @@ class Template82e6330a78 extends Latte\Runtime\Template
 	{
 		extract($_args);
 		?>    <a role="button" class="btn btn-default"  href="<?php echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link("add")) ?>">Přidat</a>
-    <table class="table table-bordered table-striped">
+    <table id="souetziciTable" class="display nowrap" width="100%" cellspacing="0">
         <thead>
         <tr>
             <th>Startovní číslo</th>
@@ -69,7 +69,7 @@ class Template82e6330a78 extends Latte\Runtime\Template
             <td><?php echo LR\Filters::escapeHtmlText($soutezici->first_name) /* line 17 */ ?></td>
             <td><?php echo LR\Filters::escapeHtmlText($soutezici->last_name) /* line 18 */ ?></td>
             <td><?php echo LR\Filters::escapeHtmlText($soutezici->birth_year) /* line 19 */ ?></td>
-            <td><?php echo LR\Filters::escapeHtmlText($kategorie[$soutezici->category]) /* line 20 */ ?></td>
+            <td><?php echo LR\Filters::escapeHtmlText($soutezici->ref('category','category')->name) /* line 20 */ ?></td>
             <td><a class="btn btn-primary" role="button" href="<?php echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link("edit", [$soutezici->id])) ?>"><i class="fa fa-edit"></i> edit</a>
                 <a class="btn btn-danger" role="button" onclick="return confirm('Opravdu to chceš?');" href="<?php
 			echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link("delete", [$soutezici->id])) ?>"><i class="fa fa-trash"></i> Smazat</a>
@@ -89,7 +89,21 @@ class Template82e6330a78 extends Latte\Runtime\Template
 	{
 		extract($_args);
 		$this->renderBlockParent('scripts', get_defined_vars());
-		
+?>
+    <script>
+        $(document).ready(function(){
+            $('#souetziciTable').dataTable( {
+                "lengthChange": false,
+                dom: 'Bfrtip',
+                buttons: [
+                    'excelHtml5',
+                    'csvHtml5',
+                    'pdfHtml5'
+                ]
+            });
+        });
+    </script>
+<?php
 	}
 
 

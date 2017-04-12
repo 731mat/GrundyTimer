@@ -12,6 +12,18 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="{$basePath}/css/style.css">
 	<link rel="stylesheet" href="{$basePath}/css/bootstrap.min.css">
+	<link rel="stylesheet" href="{$basePath}/css/jquery.dataTables.min.css">
+	<link rel="stylesheet" href="{$basePath}/css/buttons.dataTables.min.css">
+	<script src="{$basePath}/js/jquery.min.js"></script>
+	<script src="{$basePath}/js/jquery-1.12.4.js“"></script>
+	<script src="{$basePath}/js/jquery.dataTables.min.js"></script>
+	<script src="{$basePath}/js/dataTables.buttons.min.js"></script>
+	<script src="{$basePath}/js/buttons.flash.min.js"></script>
+	<script src="{$basePath}/js/jszip.min.js"></script>
+	<script src="{$basePath}/js/pdfmake.min.js"></script>
+	<script src="{$basePath}/js/vfs_fonts.js"></script>
+	<script src="{$basePath}/js/buttons.html5.min.js"></script>
+	<script src="{$basePath}/js/buttons.print.min.js"></script>
 	{block head}{/block}
 </head>
 
@@ -24,6 +36,7 @@
 			<ul class="nav navbar-nav">
 				<li><a n:href="Soutezici:default">Soutěžící</a></li>
 				<li><a n:href="Kategorie:default">Kategorie</a></li>
+				<li><a n:href="Start:default">start</a></li>
 			</ul>
 		</div>
 	</nav>
@@ -35,7 +48,7 @@
 	{include content}
 	</div>
 	{block scripts}
-	<script src="{$basePath}/js/jquery.min.js"></script>
+
 	<script src="{$basePath}/js/bootstrap.min.js"></script>
 	<script src="https://nette.github.io/resources/js/netteForms.min.js"></script>
 	<script src="{$basePath}/js/main.js"></script>

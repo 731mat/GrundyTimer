@@ -1,6 +1,6 @@
 {block content}
     <a n:href="add" role="button" class="btn btn-default" >Přidat</a>
-    <table class="table table-bordered table-striped">
+    <table id="souetziciTable" class="display nowrap" width="100%" cellspacing="0">
         <thead>
         <tr>
             <th>Startovní číslo</th>
@@ -17,7 +17,7 @@
             <td>{$soutezici->first_name}</td>
             <td>{$soutezici->last_name}</td>
             <td>{$soutezici->birth_year}</td>
-            <td>{$kategorie[$soutezici->category]}</td>
+            <td>{$soutezici->ref('category','category')->name}</td>
             <td><a n:href="edit $soutezici->id" class="btn btn-primary" role="button"><i class="fa fa-edit"></i> edit</a>
                 <a n:href="delete $soutezici->id" class="btn btn-danger" role="button" onclick="return confirm('Opravdu to chceš?');"><i class="fa fa-trash"></i> Smazat</a>
             </td>
@@ -28,6 +28,19 @@
 
 {block scripts}
     {include parent}
+    <script>
+        $(document).ready(function(){
+            $('#souetziciTable').dataTable( {
+                "lengthChange": false,
+                dom: 'Bfrtip',
+                buttons: [
+                    'excelHtml5',
+                    'csvHtml5',
+                    'pdfHtml5'
+                ]
+            });
+        });
+    </script>
 {/block}
 
 

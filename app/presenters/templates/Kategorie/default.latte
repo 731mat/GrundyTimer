@@ -1,10 +1,13 @@
 {block content}
     <a n:href="add" role="button" class="btn btn-default" >Přidat</a>
-    <table class="table table-bordered table-striped">
+    <table id="kategorieTable" class="display nowrap" width="100%" cellspacing="0">
         <thead>
         <tr>
             <th>id</th>
             <th>nazev</th>
+            <th>pocet kol</th>
+            <th>min time</th>
+            <th>start time</th>
             <th class="text-center">Akce</th>
         </tr>
         </thead>
@@ -12,6 +15,9 @@
         <tr n:foreach="$data as $kategorie">
             <td>{$kategorie->id}</td>
             <td>{$kategorie->name}</td>
+            <td>{$kategorie->count_round}</td>
+            <td>{$kategorie->min_time|date:'%H:%M:%S'}</td>
+            <td>{if $kategorie->start_time == NULL}pokus{else}pok{/if}</td>
             <td><a n:href="edit $kategorie->id" class="btn btn-primary" role="button"><i class="fa fa-edit"></i> edit</a>
                 <a n:href="delete $kategorie->id" class="btn btn-danger" role="button" onclick="return confirm('Opravdu to chceš?');"><i class="fa fa-trash"></i> Smazat</a>
             </td>
@@ -23,6 +29,19 @@
 
 {block scripts}
     {include parent}
+    <script>
+    $(document).ready(function(){
+        $('#kategorieTable').dataTable( {
+            "lengthChange": false,
+            dom: 'Bfrtip',
+            buttons: [
+                'excelHtml5',
+                'csvHtml5',
+                'pdfHtml5'
+            ]
+        });
+    });
+    </script>
 {/block}
 
 

@@ -46,6 +46,10 @@ class SouteziciManager
         //return $this->database->table(self::TABLE_NAME)->where(self::COLUMN_ID, $id)->fetch();
         return $this->database->table(self::TABLE_NAME)->get($id);
     }
+    public function getByCategory($id)
+    {
+        return $this->database->table(self::TABLE_NAME)->where(self::COLUMN_IDKATEGORIE, $id)->fetchAll();
+    }
     public function insert($values)
     {
         try{

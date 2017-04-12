@@ -25,7 +25,6 @@ class SouteziciPresenter extends BasePresenter
 
     public function renderDefault($order = 'start_number')
     {
-        $this->template->kategorie = $this->KategorieManager->getPole();
         $this->template->data = $this->SouteziciManager->getAll($order);
     }
 
