@@ -4,6 +4,7 @@ namespace App\Model;
 
 use Nette;
 use App\Model\SouteziciManager;
+use App\Model\KategorieManager;
 
 /**
  * Users management.
@@ -20,12 +21,14 @@ class RaceManager
     /** @var Nette\Database\Context */
     private $database;
     private $souteziciManager;
+    private $kategorieManager;
 
 
-    public function __construct(Nette\Database\Context $database, SouteziciManager $souteziciManager)
+    public function __construct(Nette\Database\Context $database, SouteziciManager $souteziciManager, KategorieManager $kategorieManager)
     {
         $this->database = $database;
         $this->souteziciManager = new souteziciManager($database);
+        $this->kategorieManager = new kategorieManager($database);
     }
 
     private function getPeopleInCategory($arrayKategorie){
@@ -36,18 +39,28 @@ class RaceManager
         return $pole;
     }
     public function peopleStart($arrayKategorie){
+        //Vygenerování dotazu pro zapsání do tabulky uživatel zapíče cas a pocet kol
+        $dotazy = "";
+        // for kazde smycky vyhodi jedno ID kategorie
+        foreach ($arrayKategorie['category'] as $kategorie){
+            // dotazy se ukadaji za sebe do promenne
+            $pocetKol = $this->kategorieManager->getById($kategorie);
+            $pocetKol = $pocetKol['count_round'];
+            $dotazy = $dotazy."UPDATE `user` SET `start_time` = time(now()), `countRound` = ".$pocetKol." WHERE `user`.`category` = ".$kategorie.";";
+        }
+        // ulozene dotazy se najednou vsechny provedou
+        $this->database->query($dotazy);
+
+
+        $dotazy1 = "";
+        // vytahnutí indexu vsech soutezicich lidi
         $indexyPeople = $this->getPeopleInCategory($arrayKategorie);
         foreach ($indexyPeople as $people){
             foreach ($people as $index){
-                try{
-                    $this->database->query("DELETE FROM `round` WHERE `round`.`id` = ?",$index);
-                    $this->database->query("INSERT INTO `round` (`id`, `time`, `count_round`, `idUser`) VALUES (NULL, time(now()), 0, ?)",$index);
-                }catch(Exeption $e){
-                    throw new Exception();
-                }
+                $dotazy1 = $dotazy1."DELETE FROM `round` WHERE `round`.`idUser` = ".$index.";";
             }
         }
-
+        $this->database->query($dotazy1);
     }
     public function addRound($id){
         try{
@@ -55,5 +68,7 @@ class RaceManager
         }catch(Exeption $e){
             throw new Exception();
         }
+        $this->souteziciManager->stepDownRound($id);
     }
+
 }

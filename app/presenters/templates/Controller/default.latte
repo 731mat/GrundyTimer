@@ -1,0 +1,29 @@
+{block content}
+    {foreach $tlacitka as $tl}
+        <button type="button" class="btn btn-info" id="button{$tl->id}" onclick="kolo({$tl->id})">{$tl->start_number}</button>
+    {/foreach}
+{/block}
+
+{block scripts}
+    {include parent}
+    <script>
+        function kolo(id) {
+            $.get("kolo/" + id, function(data, status){
+            });
+        }
+        setInterval(ajaxCall, 500);
+
+        function ajaxCall() {
+            $.get("json", function(data, status){
+                for(var i = 0; i < data.length; i++){
+                    if(data[i].cout_round == 0)
+                        $("#button"+data[i].id).attr('disabled','disabled');
+                }
+            });
+        }
+    </script>
+{/block}
+
+
+{block head}
+{/block}

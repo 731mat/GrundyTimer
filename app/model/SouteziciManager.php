@@ -20,6 +20,8 @@ class SouteziciManager
         COLUMN_PRIJMENI = 'last_name',
         COLUMN_NAROZEN = 'birth_year',
         COLUMN_STARTCISLO = 'start_number',
+        COLUMN_STARTTIME = 'start_time',
+        COLUMN_FINISHTIME = 'finish_time',
         COLUMN_IDKATEGORIE = 'category';
 
 
@@ -72,6 +74,16 @@ class SouteziciManager
     {
         try{
             $this->database->table(self::TABLE_NAME)->where(self::COLUMN_ID, $id)->delete();
+        }catch(Exeption $e){
+            throw new Exception();
+        }
+    }
+    public function getPeopleInSomeRace(){
+        return $this->database->table(self::TABLE_NAME)->where(self::COLUMN_FINISHTIME." IS NULL")->fetchAll();
+    }
+    public function stepDownRound($id){
+        try{
+            $this->database->query("UPDATE `user` SET `countRound` = (SELECT `countRound`)-1 WHERE `user`.`id` = ? ",$id);
         }catch(Exeption $e){
             throw new Exception();
         }

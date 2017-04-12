@@ -338,7 +338,7 @@ class Container_e7957aaed7 extends Nette\DI\Container
 	public function createService__28_App_Model_RaceManager(): App\Model\RaceManager
 	{
 		$service = new App\Model\RaceManager($this->getService('database.default.context'),
-			$this->getService('29_App_Model_SouteziciManager'));
+			$this->getService('29_App_Model_SouteziciManager'), $this->getService('27_App_Model_KategorieManager'));
 		return $service;
 	}
 
@@ -406,7 +406,8 @@ class Container_e7957aaed7 extends Nette\DI\Container
 
 	public function createServiceApplication__4(): App\Presenters\ControllerPresenter
 	{
-		$service = new App\Presenters\ControllerPresenter($this->getService('28_App_Model_RaceManager'));
+		$service = new App\Presenters\ControllerPresenter($this->getService('28_App_Model_RaceManager'),
+			$this->getService('29_App_Model_SouteziciManager'));
 		$service->injectPrimary($this, $this->getService('application.presenterFactory'),
 			$this->getService('routing.router'), $this->getService('http.request'),
 			$this->getService('http.response'), $this->getService('session.session'),
