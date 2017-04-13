@@ -46,7 +46,7 @@ class RaceManager
             // dotazy se ukadaji za sebe do promenne
             $pocetKol = $this->kategorieManager->getById($kategorie);
             $pocetKol = $pocetKol['count_round'];
-            $dotazy = $dotazy."UPDATE `user` SET `start_time` = time(now()), `countRound` = ".$pocetKol." WHERE `user`.`category` = ".$kategorie.";";
+            $dotazy = $dotazy."UPDATE `user` SET `start_time` = time(now()), `countRound` = ".$pocetKol." WHERE `user`.`category` = ".$kategorie." AND `user`.`start_time` IS NULL;";
         }
         // ulozene dotazy se najednou vsechny provedou
         $this->database->query($dotazy);
@@ -68,7 +68,6 @@ class RaceManager
         }catch(Exeption $e){
             throw new Exception();
         }
-        $this->souteziciManager->stepDownRound($id);
     }
 
 }

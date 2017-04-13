@@ -66,16 +66,28 @@ class Templatee90543ff6a extends Latte\Runtime\Template
 ?>
     <script>
         function kolo(id) {
+            $("body").css("background","white");
             $.get("kolo/" + id, function(data, status){
+                if(data.odpoved == "true")
+                    $("body").css("background","white");
+                else
+                    $("body").css("background","black");
             });
         }
-        setInterval(ajaxCall, 500); //300000 MS == 5 minutes
+        setInterval(ajaxCall, 700);
 
         function ajaxCall() {
             $.get("json", function(data, status){
                 for(var i = 0; i < data.length; i++){
                     if(data[i].cout_round == 0)
                         $("#button"+data[i].id).attr('disabled','disabled');
+                    else
+                        if(data[i].enable == 0){
+                            $("#button"+data[i].id).attr('disabled','disabled');
+                        }else
+                            $("#button"+data[i].id).removeAttr('disabled');
+                    $("#button"+data[i].id).text(data[i].enable);
+
                 }
             });
         }

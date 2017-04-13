@@ -78,14 +78,37 @@ class SouteziciManager
             throw new Exception();
         }
     }
-    public function getPeopleInSomeRace(){
+
+    public function getPeopleStarted(){
         return $this->database->table(self::TABLE_NAME)->where(self::COLUMN_FINISHTIME." IS NULL")->fetchAll();
     }
+
+    public function getPeopleInFinnish(){
+        return $this->database->table(self::TABLE_NAME)->where(self::COLUMN_FINISHTIME." IS NOT NULL")->fetchAll();
+    }
+    public function getPoepleForController(){
+        //"id" => $people['id'], "start_number" => $people['start_number'], "cout_round" => $people['countRound'], "enable" =>$people['enable']
+        return $this->database->query("SELECT `id`, `start_number`, `countRound`, IF(`round_time` IS NOT NULL ,IF(TIMEDIFF(time(now()), `round_time`) > (SELECT `category`.`min_time` FROM `category` WHERE id = `user`.`category`),'1','0'),'1') AS `enable` FROM `user` ")->fetchAll();
+    }
     public function stepDownRound($id){
-        try{
-            $this->database->query("UPDATE `user` SET `countRound` = (SELECT `countRound`)-1 WHERE `user`.`id` = ? ",$id);
-        }catch(Exeption $e){
-            throw new Exception();
+        $dataPeople = $this->database->query("SELECT `countRound` FROM `user` WHERE `user`.`id` = ? ",$id)->fetch();
+
+        // pokud jeste nemá odjezdena vsechna kola
+        if($dataPeople['countRound'] > 0) {
+            try {
+                // sniž pocet kol o jednicku
+                $this->database->query("UPDATE `user` SET `countRound` = (SELECT `countRound`)-1, `round_time` = time(now()) WHERE `user`.`id` = ? ", $id);
+                // pokud pocet kol bude na nule tak uloz finish time
+                if($dataPeople['countRound'] == 1) {
+                    $this->database->query("UPDATE `user` SET `finish_time` = time(now()) WHERE `user`.`id` = ? ", $id);
+                    // nezapisuj do tabulky posledni kolo
+                    return false;
+                }
+            } catch (Exeption $e) {
+                throw new Exception();
+            }
+            return true;
         }
+        return false;
     }
 }
