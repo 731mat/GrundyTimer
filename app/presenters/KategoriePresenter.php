@@ -34,7 +34,12 @@ class KategoriePresenter extends BasePresenter
     {
         $form = new Form;
         $form->addText('name', 'název:');
+        $form->addText('count_round', 'pocet kol:')
+            ->setType('number')
+            ->setRequired(FALSE)
+            ->addRule(Form::RANGE, 'kola musí být v rozsahu', [1, 120]);
         $form->addSubmit('submit', 'odeslat');
+        $this->renderForm($form);
         $form->onSuccess[] = [$this, 'kategorieFormSucceeded'];
         return $form;
     }

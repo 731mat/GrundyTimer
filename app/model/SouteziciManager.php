@@ -83,9 +83,34 @@ class SouteziciManager
         return $this->database->table(self::TABLE_NAME)->where(self::COLUMN_FINISHTIME." IS NULL")->fetchAll();
     }
 
+
+
     public function getPeopleInFinnish(){
-        return $this->database->table(self::TABLE_NAME)->where(self::COLUMN_FINISHTIME." IS NOT NULL")->fetchAll();
+        $data = ($this->database->query("SELECT *, TIMEDIFF(`finish_time`,`start_time`) AS `rozdil`, (SELECT `name` FROM `category` WHERE `category`.`id` = `user`.`category`) AS `categoryName` FROM `user` ORDER BY `rozdil` ")->fetchAll());
+        $vystup = array();
+        $pomocnyVystup = array();
+        $pomocnyCas = array();
+        foreach ($data as $d){
+            $casy = $this->database->query("SELECT time FROM `round` WHERE `round`.`idUser` = ?",$d['id'])->fetchAll();
+            $pomocnyVystup = array();
+            $pomocnyCas = array();
+            foreach ($d as $key => $value){
+                $pomocnyVystup[$key] = $value;
+            }
+            foreach ($casy as $key => $value){
+                $pomocnyCas[$key] = $value['time'];
+            }
+            $pomocnyVystup['casy'] = $pomocnyCas;
+            array_push($vystup, $pomocnyVystup);
+        }
+        //dump($vystup);
+        return $vystup;
     }
+
+
+
+
+
     public function getPoepleForController(){
         //"id" => $people['id'], "start_number" => $people['start_number'], "cout_round" => $people['countRound'], "enable" =>$people['enable']
         return $this->database->query("SELECT `id`, `start_number`, `countRound`, IF(`round_time` IS NOT NULL ,IF(TIMEDIFF(time(now()), `round_time`) > (SELECT `category`.`min_time` FROM `category` WHERE id = `user`.`category`),'1','0'),'1') AS `enable` FROM `user` ")->fetchAll();
@@ -101,8 +126,6 @@ class SouteziciManager
                 // pokud pocet kol bude na nule tak uloz finish time
                 if($dataPeople['countRound'] == 1) {
                     $this->database->query("UPDATE `user` SET `finish_time` = time(now()) WHERE `user`.`id` = ? ", $id);
-                    // nezapisuj do tabulky posledni kolo
-                    return false;
                 }
             } catch (Exeption $e) {
                 throw new Exception();

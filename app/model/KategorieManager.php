@@ -82,4 +82,9 @@ class KategorieManager
         }
         return $tempArray;
     }
+
+    // fukce která vrací kolik bylo max v tabulce zaznamů
+    public function getMaxRoundInCategory(){
+       return $this->database->query("SELECT MAX(`count_round`) AS `max` FROM `category`")->fetch()['max'];
+    }
 }

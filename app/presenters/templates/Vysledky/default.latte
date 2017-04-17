@@ -1,5 +1,5 @@
 {block content}
-    <table id="kategorieTable" class="display nowrap" width="100%" cellspacing="0">
+    <table id="vysledkyTable" class="display nowrap" width="100%" cellspacing="0">
         <thead>
         <tr>
             <th>number</th>
@@ -8,17 +8,23 @@
             <th>rocnik</th>
             <th>kategorie</th>
             <th>time</th>
-            <th>spent</th>
+            {for $i = 0; $i <= $maxCulom; $i++ }
+                <th>kolo{$i}</th>
+            {/for}
+            <th></th>
         </tr>
         </thead>
         <tbody>
         <tr n:foreach="$data as $soutezici">
-            <td>{$soutezici->start_number}</td>
-            <td>{$soutezici->first_name}</td>
-            <td>{$soutezici->last_name}</td>
-            <td>{$soutezici->birth_year}</td>
-            <td>{$soutezici->ref('category','category')->name}</td>
-            <td>{$soutezici->finish_time->sub($soutezici->finish_time)|date:'%H:%i:%s'}</td>
+            <td>{$soutezici['start_number']}</td>
+            <td>{$soutezici['first_name']}</td>
+            <td>{$soutezici['last_name']}</td>
+            <td>{$soutezici['birth_year']}</td>
+            <td>{$soutezici['categoryName']}</td>
+            <td>{$soutezici['rozdil']|date:'%H:%i:%s'}</td>
+            <td n:foreach="$soutezici['casy'] as $cas">
+                {$cas|date:'%H:%i:%s'}
+            </td>
         </tr>
         </tbody>
     </table>
@@ -29,7 +35,7 @@
     {include parent}
     <script>
         $(document).ready(function(){
-            $('#kategorieTable').dataTable( {
+            $('#vysledkyTable').dataTable( {
                 "lengthChange": false,
                 dom: 'Bfrtip',
                 buttons: [
