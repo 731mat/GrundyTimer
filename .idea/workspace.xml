@@ -2,81 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a26bf463-be50-4010-b2e6-ef2432674441" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/temp/cache/_Nette.Database.894354811323294f1fe0754b07e3ee8f/_08bf4b4f80f67e1b75c69cec4232c5d7" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/temp/cache/_Nette.Database.894354811323294f1fe0754b07e3ee8f/_0913040e8ec0cc45be69ce94c85a8a0b" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/temp/cache/_Nette.Database.894354811323294f1fe0754b07e3ee8f/_0c54da2821db2a87114eaaa5759437d3" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/temp/cache/_Nette.Database.894354811323294f1fe0754b07e3ee8f/_12e8cae0b48e52f0847a454dd2204d2a" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/temp/cache/_Nette.Database.894354811323294f1fe0754b07e3ee8f/_176a62ad1ae11b67f832d21a3168cfe7" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/temp/cache/_Nette.Database.894354811323294f1fe0754b07e3ee8f/_24ca89042593b24de4e894559d40aac5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/temp/cache/_Nette.Database.894354811323294f1fe0754b07e3ee8f/_2d52dfd8a516b0cd1d892e0db7f99b5e" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/temp/cache/_Nette.Database.894354811323294f1fe0754b07e3ee8f/_2ea0a8bac36b19bf6ff6273798e51aef" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/temp/cache/_Nette.Database.894354811323294f1fe0754b07e3ee8f/_32e079ebe5a3bd5d7920105ba1aec90d" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/temp/cache/_Nette.Database.894354811323294f1fe0754b07e3ee8f/_3a3c602d59b86a873f7ea053d9e5eb00" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/temp/cache/_Nette.Database.894354811323294f1fe0754b07e3ee8f/_42653ee1aeeb797efe6bdb0525a3b81e" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/temp/cache/_Nette.Database.894354811323294f1fe0754b07e3ee8f/_433088706ce23b226c5868bec697114c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/temp/cache/_Nette.Database.894354811323294f1fe0754b07e3ee8f/_464c5822c1037344c180988d1157ec1c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/temp/cache/_Nette.Database.894354811323294f1fe0754b07e3ee8f/_4982b2df7fafd2bf91f84f493eba0e75" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/temp/cache/_Nette.Database.894354811323294f1fe0754b07e3ee8f/_4dfbd695a46c0bafb3859d197b030365" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/temp/cache/_Nette.Database.894354811323294f1fe0754b07e3ee8f/_55256deed31337ea71475b89670c959b" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/temp/cache/_Nette.Database.894354811323294f1fe0754b07e3ee8f/_55acbde67c39961bd2240616ec471b78" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/temp/cache/_Nette.Database.894354811323294f1fe0754b07e3ee8f/_57b40d8cac707df806cdd724d64d8141" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/temp/cache/_Nette.Database.894354811323294f1fe0754b07e3ee8f/_59bbfcc07ed2ec8f3523fc1372bb5cbb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/temp/cache/_Nette.Database.894354811323294f1fe0754b07e3ee8f/_66581b77a5bd758e904989f97cab4d83" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/temp/cache/_Nette.Database.894354811323294f1fe0754b07e3ee8f/_72d98055e563f14dee2bb0b2718887b7" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/temp/cache/_Nette.Database.894354811323294f1fe0754b07e3ee8f/_78a84b9e6ad1c30fd2bd58a3ffe50d58" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/temp/cache/_Nette.Database.894354811323294f1fe0754b07e3ee8f/_78cdcc6b54bb42f856e93f93338998b5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/temp/cache/_Nette.Database.894354811323294f1fe0754b07e3ee8f/_7e167d632302c966b29f4e9e91d3bbf4" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/temp/cache/_Nette.Database.894354811323294f1fe0754b07e3ee8f/_84c0ace41c5afbdd927c40d1e71e27ad" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/temp/cache/_Nette.Database.894354811323294f1fe0754b07e3ee8f/_869f79a2edf19a98223e05b10d38e9fb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/temp/cache/_Nette.Database.894354811323294f1fe0754b07e3ee8f/_8b67db7db8958eecb08507d00475b3e3" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/temp/cache/_Nette.Database.894354811323294f1fe0754b07e3ee8f/_90adc4d33fc7dd25acd54e8ffb3b5559" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/temp/cache/_Nette.Database.894354811323294f1fe0754b07e3ee8f/_90b8049b574d962e1eb81e50cf0bac85" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/temp/cache/_Nette.Database.894354811323294f1fe0754b07e3ee8f/_92c802ad9468375fa433ee4df3792e3c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/temp/cache/_Nette.Database.894354811323294f1fe0754b07e3ee8f/_9444f67f67c644f8c5388d6fed7a266c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/temp/cache/_Nette.Database.894354811323294f1fe0754b07e3ee8f/_95b41d4c084fae73568a0f26b4125a90" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/temp/cache/_Nette.Database.894354811323294f1fe0754b07e3ee8f/_a27765a39f1c5ee20871058b17bdd4ff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/temp/cache/_Nette.Database.894354811323294f1fe0754b07e3ee8f/_a33cea431fde09018e889b93e6068ec8" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/temp/cache/_Nette.Database.894354811323294f1fe0754b07e3ee8f/_a749d54cbf289825f0ef68988edfd484" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/temp/cache/_Nette.Database.894354811323294f1fe0754b07e3ee8f/_a77f4ffcc8581febe9b4ba3d79e25c2f" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/temp/cache/_Nette.Database.894354811323294f1fe0754b07e3ee8f/_ab8768c0a31ff2360dddcbde0bb99167" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/temp/cache/_Nette.Database.894354811323294f1fe0754b07e3ee8f/_b23b8d2076675b165c5f760344be879c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/temp/cache/_Nette.Database.894354811323294f1fe0754b07e3ee8f/_bd9083b5f28bcd20ec3bc3b27b93f346" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/temp/cache/_Nette.Database.894354811323294f1fe0754b07e3ee8f/_c386a9fb8d9592448012cbd6d06c1e1b" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/temp/cache/_Nette.Database.894354811323294f1fe0754b07e3ee8f/_c975dddb83bdd79431766d6955a26a7b" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/temp/cache/_Nette.Database.894354811323294f1fe0754b07e3ee8f/_cccc66a77bbdddfd7b269caad7e3b1bf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/temp/cache/_Nette.Database.894354811323294f1fe0754b07e3ee8f/_cd5c6bde3e26e2b2066b173f4f0e90c0" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/temp/cache/_Nette.Database.894354811323294f1fe0754b07e3ee8f/_d3840a7000822bf255f1d5e23e224d85" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/temp/cache/_Nette.Database.894354811323294f1fe0754b07e3ee8f/_d390f5663f5aa455545c3a5f5176c53b" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/temp/cache/_Nette.Database.894354811323294f1fe0754b07e3ee8f/_d70f50dc37e3edac20f8903795cb40de" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/temp/cache/_Nette.Database.894354811323294f1fe0754b07e3ee8f/_dd8dae7e60e3b4ad23d7a0bc2610a868" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/temp/cache/_Nette.Database.894354811323294f1fe0754b07e3ee8f/_e2eb14a69c67d067192566d5a48cb4d0" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/temp/cache/_Nette.Database.894354811323294f1fe0754b07e3ee8f/_ec619d8c4c5c49b390ef58234e4b2347" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/temp/cache/_Nette.Database.894354811323294f1fe0754b07e3ee8f/_fc68bfe8946f6b150185b58e67a0c0c5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/temp/cache/journal.s3db" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/temp/cache/latte/ajax.latte--41f24f5905.php.lock" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/temp/cache/latte/templates-Soutezici-edit.latte--d2e114c8b3.php" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/model/KategorieManager.php" afterPath="$PROJECT_DIR$/app/model/KategorieManager.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/model/SouteziciManager.php" afterPath="$PROJECT_DIR$/app/model/SouteziciManager.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/presenters/BasePresenter.php" afterPath="$PROJECT_DIR$/app/presenters/BasePresenter.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/presenters/KategoriePresenter.php" afterPath="$PROJECT_DIR$/app/presenters/KategoriePresenter.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/presenters/VysledkyPresenter.php" afterPath="$PROJECT_DIR$/app/presenters/VysledkyPresenter.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/presenters/templates/Controller/default.latte" afterPath="$PROJECT_DIR$/app/presenters/templates/Controller/default.latte" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/presenters/templates/Kategorie/default.latte" afterPath="$PROJECT_DIR$/app/presenters/templates/Kategorie/default.latte" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/presenters/templates/Vysledky/default.latte" afterPath="$PROJECT_DIR$/app/presenters/templates/Vysledky/default.latte" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/temp/cache/Nette.Configurator/Container_e7957aaed7.php" afterPath="$PROJECT_DIR$/temp/cache/Nette.Configurator/Container_e7957aaed7.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/temp/cache/Nette.Configurator/Container_e7957aaed7.php.meta" afterPath="$PROJECT_DIR$/temp/cache/Nette.Configurator/Container_e7957aaed7.php.meta" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/temp/cache/Nette.RobotLoader/_Nette.RobotLoader/_18d16186be9a2587a408713ce1760bb7" afterPath="$PROJECT_DIR$/temp/cache/Nette.RobotLoader/_Nette.RobotLoader/_18d16186be9a2587a408713ce1760bb7" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/temp/cache/_Nette.Database.894354811323294f1fe0754b07e3ee8f/_0c8fc136ca107f758ff8fd67fd2c89ad" afterPath="$PROJECT_DIR$/temp/cache/_Nette.Database.894354811323294f1fe0754b07e3ee8f/_0c8fc136ca107f758ff8fd67fd2c89ad" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/temp/cache/_Nette.Database.894354811323294f1fe0754b07e3ee8f/_143c4fc1de616da32ad890aeeeb7b60d" afterPath="$PROJECT_DIR$/temp/cache/_Nette.Database.894354811323294f1fe0754b07e3ee8f/_143c4fc1de616da32ad890aeeeb7b60d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/temp/cache/_Nette.Database.894354811323294f1fe0754b07e3ee8f/_2007be1ec713a0a601ff4e8e614b3eec" afterPath="$PROJECT_DIR$/temp/cache/_Nette.Database.894354811323294f1fe0754b07e3ee8f/_2007be1ec713a0a601ff4e8e614b3eec" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/temp/cache/_Nette.Database.894354811323294f1fe0754b07e3ee8f/_243e8d23319dcd5b66e92076f40c21e1" afterPath="$PROJECT_DIR$/temp/cache/_Nette.Database.894354811323294f1fe0754b07e3ee8f/_243e8d23319dcd5b66e92076f40c21e1" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/temp/cache/_Nette.Database.894354811323294f1fe0754b07e3ee8f/_39c034145352992a1bf24aaf9afe7a83" afterPath="$PROJECT_DIR$/temp/cache/_Nette.Database.894354811323294f1fe0754b07e3ee8f/_39c034145352992a1bf24aaf9afe7a83" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/temp/cache/_Nette.Database.894354811323294f1fe0754b07e3ee8f/_ca27b3861301b2b85a481a20253988d4" afterPath="$PROJECT_DIR$/temp/cache/_Nette.Database.894354811323294f1fe0754b07e3ee8f/_ca27b3861301b2b85a481a20253988d4" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/temp/cache/_Nette.Database.Structure.894354811323294f1fe0754b07e3ee8f/_07414f4e15ca943e6cde032dec85d92f" afterPath="$PROJECT_DIR$/temp/cache/_Nette.Database.Structure.894354811323294f1fe0754b07e3ee8f/_07414f4e15ca943e6cde032dec85d92f" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/temp/cache/latte/templates-Controller-default.latte--e90543ff6a.php" afterPath="$PROJECT_DIR$/temp/cache/latte/templates-Controller-default.latte--e90543ff6a.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/temp/cache/latte/templates-Kategorie-default.latte--1651436cf4.php" afterPath="$PROJECT_DIR$/temp/cache/latte/templates-Kategorie-default.latte--1651436cf4.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/temp/cache/latte/templates-Vysledky-default.latte--624fd45600.php" afterPath="$PROJECT_DIR$/temp/cache/latte/templates-Vysledky-default.latte--624fd45600.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/config.neon" afterPath="$PROJECT_DIR$/app/config/config.neon" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/presenters/HomepagePresenter.php" afterPath="$PROJECT_DIR$/app/presenters/HomepagePresenter.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/presenters/SouteziciPresenter.php" afterPath="$PROJECT_DIR$/app/presenters/SouteziciPresenter.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/presenters/templates/@layout.latte" afterPath="$PROJECT_DIR$/app/presenters/templates/@layout.latte" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/presenters/templates/Homepage/default.latte" afterPath="$PROJECT_DIR$/app/presenters/templates/Homepage/default.latte" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -94,34 +25,34 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="default.latte" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/presenters/templates/Kategorie/default.latte">
+      <file leaf-file-name="HomepagePresenter.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/presenters/HomepagePresenter.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="8" column="29" lean-forward="false" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="KategoriePresenter.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/presenters/KategoriePresenter.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="8" column="46" lean-forward="true" selection-start-line="8" selection-start-column="46" selection-end-line="8" selection-end-column="46" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BasePresenter.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/presenters/BasePresenter.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+            <state relative-caret-position="378">
+              <caret line="21" column="25" lean-forward="false" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
               <folding>
                 <element signature="e#34#44#0#PHP" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="default.latte" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/presenters/templates/Homepage/default.latte">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="186">
+              <caret line="11" column="52" lean-forward="false" selection-start-line="11" selection-start-column="52" selection-end-line="11" selection-end-column="52" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="InfoManager.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/model/InfoManager.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="12" column="31" lean-forward="false" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="31" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -150,9 +81,7 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/app/config/config.local.neon" />
-        <option value="$PROJECT_DIR$/app/presenters/templates/Homepage/default.latte" />
         <option value="$PROJECT_DIR$/app/router/RouterFactory.php" />
-        <option value="$PROJECT_DIR$/app/presenters/HomepagePresenter.php" />
         <option value="$PROJECT_DIR$/app/presenters/templates/Soutezici/view.latte" />
         <option value="$PROJECT_DIR$/app/presenters/templates/Soutezici/edit.latte" />
         <option value="$PROJECT_DIR$/app/presenters/templates/Soutezici/add.latte" />
@@ -162,19 +91,22 @@
         <option value="$PROJECT_DIR$/app/presenters/templates/Start/default.latte" />
         <option value="$PROJECT_DIR$/app/presenters/StartPresenter.php" />
         <option value="$PROJECT_DIR$/app/presenters/templates/Soutezici/default.latte" />
-        <option value="$PROJECT_DIR$/app/presenters/SouteziciPresenter.php" />
-        <option value="$PROJECT_DIR$/app/config/config.neon" />
-        <option value="$PROJECT_DIR$/app/presenters/templates/@layout.latte" />
         <option value="$PROJECT_DIR$/app/model/RaceManager.php" />
         <option value="$PROJECT_DIR$/app/presenters/ControllerPresenter.php" />
         <option value="$PROJECT_DIR$/app/presenters/templates/Controller/default.latte" />
         <option value="$PROJECT_DIR$/app/model/KategorieManager.php" />
         <option value="$PROJECT_DIR$/app/presenters/VysledkyPresenter.php" />
-        <option value="$PROJECT_DIR$/app/model/SouteziciManager.php" />
         <option value="$PROJECT_DIR$/app/presenters/templates/Vysledky/default.latte" />
         <option value="$PROJECT_DIR$/app/presenters/templates/Kategorie/default.latte" />
         <option value="$PROJECT_DIR$/app/presenters/BasePresenter.php" />
         <option value="$PROJECT_DIR$/app/presenters/KategoriePresenter.php" />
+        <option value="$PROJECT_DIR$/app/presenters/SouteziciPresenter.php" />
+        <option value="$PROJECT_DIR$/app/presenters/templates/@layout.latte" />
+        <option value="$PROJECT_DIR$/app/model/SouteziciManager.php" />
+        <option value="$PROJECT_DIR$/app/config/config.neon" />
+        <option value="$PROJECT_DIR$/app/presenters/HomepagePresenter.php" />
+        <option value="$PROJECT_DIR$/app/model/InfoManager.php" />
+        <option value="$PROJECT_DIR$/app/presenters/templates/Homepage/default.latte" />
       </list>
     </option>
   </component>
@@ -212,8 +144,8 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="y" value="24" />
-    <option name="width" value="1920" />
-    <option name="height" value="1056" />
+    <option name="width" value="1366" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -230,6 +162,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -350,7 +283,7 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Vysledky" />
+              <option name="myItemId" value="Homepage" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -368,39 +301,12 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="presenters" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Kategorie" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GrundyBike" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GrundyBike" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="model" />
+              <option name="myItemId" value="config" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -495,17 +401,18 @@
       <workItem from="1491994187999" duration="12904000" />
       <workItem from="1492105785258" duration="13105000" />
       <workItem from="1492356131128" duration="2753000" />
+      <workItem from="1492500869424" duration="7204000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="56674000" />
+    <option name="totallyTimeSpent" value="63878000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="24" width="1920" height="1056" extended-state="6" />
-    <editor active="false" />
+    <frame x="0" y="24" width="1366" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17760417" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17715959" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -535,14 +442,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/presenters/SouteziciPresenter.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="28" column="72" lean-forward="false" selection-start-line="28" selection-start-column="72" selection-end-line="28" selection-end-column="72" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/presenters/templates/Soutezici/default.latte">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -573,15 +472,15 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1492357216623" expanded="true" signature="2206:2387" ph="SELECT *, TI... user" />
-            <marker date="1492357216623" expanded="true" signature="2267:2338" ph="SELECT `name... category" />
-            <marker date="1492357216623" expanded="true" signature="2572:2623" ph="SELECT time " />
-            <marker date="1492357216623" expanded="true" signature="3337:3563" ph="SELECT `id`,... user" />
-            <marker date="1492357216623" expanded="true" signature="3451:3524" ph="SELECT `cate... category" />
-            <marker date="1492357216623" expanded="true" signature="3672:3725" ph="SELECT `coun... user" />
-            <marker date="1492357216623" expanded="true" signature="3942:4048" ph="UPDATE `user... " />
-            <marker date="1492357216623" expanded="true" signature="3976:3995" ph="SELECT `coun... " />
-            <marker date="1492357216623" expanded="true" signature="4224:4291" ph="UPDATE `user... " />
+            <marker date="1492508424808" expanded="true" signature="2206:2387" ph="SELECT *, TI... user" />
+            <marker date="1492508424808" expanded="true" signature="2267:2338" ph="SELECT `name... category" />
+            <marker date="1492508424808" expanded="true" signature="2572:2623" ph="SELECT time " />
+            <marker date="1492508424808" expanded="true" signature="3337:3563" ph="SELECT `id`,... user" />
+            <marker date="1492508424808" expanded="true" signature="3451:3524" ph="SELECT `cate... category" />
+            <marker date="1492508424808" expanded="true" signature="3672:3725" ph="SELECT `coun... user" />
+            <marker date="1492508424808" expanded="true" signature="3942:4048" ph="UPDATE `user... " />
+            <marker date="1492508424808" expanded="true" signature="3976:3995" ph="SELECT `coun... " />
+            <marker date="1492508424808" expanded="true" signature="4224:4291" ph="UPDATE `user... " />
           </folding>
         </state>
       </provider>
@@ -599,7 +498,7 @@
         <state relative-caret-position="72">
           <caret line="5" column="14" lean-forward="true" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
           <folding>
-            <element signature="e#34#44#0#PHP" expanded="true" />
+            <element signature="e#34#44#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -635,15 +534,15 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1492357216623" expanded="true" signature="2206:2387" ph="SELECT *, TI... user" />
-            <marker date="1492357216623" expanded="true" signature="2267:2338" ph="SELECT `name... category" />
-            <marker date="1492357216623" expanded="true" signature="2572:2623" ph="SELECT time " />
-            <marker date="1492357216623" expanded="true" signature="3337:3563" ph="SELECT `id`,... user" />
-            <marker date="1492357216623" expanded="true" signature="3451:3524" ph="SELECT `cate... category" />
-            <marker date="1492357216623" expanded="true" signature="3672:3725" ph="SELECT `coun... user" />
-            <marker date="1492357216623" expanded="true" signature="3942:4048" ph="UPDATE `user... " />
-            <marker date="1492357216623" expanded="true" signature="3976:3995" ph="SELECT `coun... " />
-            <marker date="1492357216623" expanded="true" signature="4224:4291" ph="UPDATE `user... " />
+            <marker date="1492508424808" expanded="true" signature="2206:2387" ph="SELECT *, TI... user" />
+            <marker date="1492508424808" expanded="true" signature="2267:2338" ph="SELECT `name... category" />
+            <marker date="1492508424808" expanded="true" signature="2572:2623" ph="SELECT time " />
+            <marker date="1492508424808" expanded="true" signature="3337:3563" ph="SELECT `id`,... user" />
+            <marker date="1492508424808" expanded="true" signature="3451:3524" ph="SELECT `cate... category" />
+            <marker date="1492508424808" expanded="true" signature="3672:3725" ph="SELECT `coun... user" />
+            <marker date="1492508424808" expanded="true" signature="3942:4048" ph="UPDATE `user... " />
+            <marker date="1492508424808" expanded="true" signature="3976:3995" ph="SELECT `coun... " />
+            <marker date="1492508424808" expanded="true" signature="4224:4291" ph="UPDATE `user... " />
           </folding>
         </state>
       </provider>
@@ -661,7 +560,7 @@
         <state relative-caret-position="72">
           <caret line="5" column="14" lean-forward="true" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
           <folding>
-            <element signature="e#34#44#0#PHP" expanded="true" />
+            <element signature="e#34#44#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -689,15 +588,15 @@
         <state relative-caret-position="450">
           <caret line="25" column="38" lean-forward="true" selection-start-line="25" selection-start-column="38" selection-end-line="25" selection-end-column="38" />
           <folding>
-            <marker date="1492357216623" expanded="true" signature="2206:2387" ph="SELECT *, TI... user" />
-            <marker date="1492357216623" expanded="true" signature="2267:2338" ph="SELECT `name... category" />
-            <marker date="1492357216623" expanded="true" signature="2572:2623" ph="SELECT time " />
-            <marker date="1492357216623" expanded="true" signature="3337:3563" ph="SELECT `id`,... user" />
-            <marker date="1492357216623" expanded="true" signature="3451:3524" ph="SELECT `cate... category" />
-            <marker date="1492357216623" expanded="true" signature="3672:3725" ph="SELECT `coun... user" />
-            <marker date="1492357216623" expanded="true" signature="3942:4048" ph="UPDATE `user... " />
-            <marker date="1492357216623" expanded="true" signature="3976:3995" ph="SELECT `coun... " />
-            <marker date="1492357216623" expanded="true" signature="4224:4291" ph="UPDATE `user... " />
+            <marker date="1492508424808" expanded="true" signature="2206:2387" ph="SELECT *, TI... user" />
+            <marker date="1492508424808" expanded="true" signature="2267:2338" ph="SELECT `name... category" />
+            <marker date="1492508424808" expanded="true" signature="2572:2623" ph="SELECT time " />
+            <marker date="1492508424808" expanded="true" signature="3337:3563" ph="SELECT `id`,... user" />
+            <marker date="1492508424808" expanded="true" signature="3451:3524" ph="SELECT `cate... category" />
+            <marker date="1492508424808" expanded="true" signature="3672:3725" ph="SELECT `coun... user" />
+            <marker date="1492508424808" expanded="true" signature="3942:4048" ph="UPDATE `user... " />
+            <marker date="1492508424808" expanded="true" signature="3976:3995" ph="SELECT `coun... " />
+            <marker date="1492508424808" expanded="true" signature="4224:4291" ph="UPDATE `user... " />
           </folding>
         </state>
       </provider>
@@ -715,7 +614,7 @@
         <state relative-caret-position="72">
           <caret line="5" column="14" lean-forward="true" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
           <folding>
-            <element signature="e#34#44#0#PHP" expanded="true" />
+            <element signature="e#34#44#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -764,13 +663,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/presenters/templates/Homepage/default.latte">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="11" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/presenters/templates/Soutezici/view.latte" />
     <entry file="file://$PROJECT_DIR$/app/presenters/templates/Soutezici/add.latte">
       <provider selected="true" editor-type-id="text-editor">
@@ -807,14 +699,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/presenters/HomepagePresenter.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="8" column="45" lean-forward="false" selection-start-line="8" selection-start-column="45" selection-end-line="8" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/presenters/templates/Kategorie/edit.latte">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="36">
@@ -845,33 +729,10 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/presenters/templates/Controller/addRound.latte" />
-    <entry file="file://$PROJECT_DIR$/app/config/config.neon">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="21" column="27" lean-forward="false" selection-start-line="21" selection-start-column="27" selection-end-line="21" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/presenters/SouteziciPresenter.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="32" column="54" lean-forward="true" selection-start-line="32" selection-start-column="54" selection-end-line="32" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/presenters/templates/Soutezici/default.latte">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="414">
           <caret line="23" column="13" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="23" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/presenters/templates/@layout.latte">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="546">
-          <caret line="37" column="68" lean-forward="true" selection-start-line="37" selection-start-column="68" selection-end-line="37" selection-end-column="68" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -891,16 +752,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/presenters/ControllerPresenter.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="666">
-          <caret line="37" column="46" lean-forward="true" selection-start-line="37" selection-start-column="46" selection-end-line="37" selection-end-column="46" />
-          <folding>
-            <element signature="e#34#66#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/model/RaceManager.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
@@ -912,40 +763,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/model/SouteziciManager.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="87" column="41" lean-forward="true" selection-start-line="87" selection-start-column="41" selection-end-line="87" selection-end-column="41" />
-          <folding>
-            <marker date="1492357216623" expanded="true" signature="2206:2387" ph="SELECT *, TI... user" />
-            <marker date="1492357216623" expanded="true" signature="2267:2338" ph="SELECT `name... category" />
-            <marker date="1492357216623" expanded="true" signature="2572:2623" ph="SELECT time " />
-            <marker date="1492357216623" expanded="true" signature="3337:3563" ph="SELECT `id`,... user" />
-            <marker date="1492357216623" expanded="true" signature="3451:3524" ph="SELECT `cate... category" />
-            <marker date="1492357216623" expanded="true" signature="3672:3725" ph="SELECT `coun... user" />
-            <marker date="1492357216623" expanded="true" signature="3942:4048" ph="UPDATE `user... " />
-            <marker date="1492357216623" expanded="true" signature="3976:3995" ph="SELECT `coun... " />
-            <marker date="1492357216623" expanded="true" signature="4224:4291" ph="UPDATE `user... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/model/KategorieManager.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="762">
-          <caret line="86" column="41" lean-forward="false" selection-start-line="86" selection-start-column="20" selection-end-line="86" selection-end-column="41" />
-          <folding>
-            <marker date="1492114822470" expanded="true" signature="2134:2184" ph="SELECT MAX(`... category" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/presenters/VysledkyPresenter.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="432">
           <caret line="24" column="75" lean-forward="false" selection-start-line="24" selection-start-column="57" selection-end-line="24" selection-end-column="75" />
           <folding>
-            <element signature="e#34#65#0#PHP" expanded="true" />
+            <element signature="e#34#65#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -958,28 +781,114 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/presenters/BasePresenter.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding>
+            <element signature="e#34#44#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/presenters/templates/Kategorie/default.latte">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
+        <state relative-caret-position="18">
           <caret line="8" column="29" lean-forward="false" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/presenters/BasePresenter.php">
+    <entry file="file://$PROJECT_DIR$/app/presenters/KategoriePresenter.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+        <state relative-caret-position="360">
+          <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="39" selection-end-column="72" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/model/KategorieManager.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="81">
+          <caret line="57" column="9" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="89" selection-end-column="1" />
+          <folding>
+            <marker date="1492114822470" expanded="true" signature="2134:2184" ph="SELECT MAX(`... category" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/model/SouteziciManager.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="105" column="10" lean-forward="false" selection-start-line="105" selection-start-column="10" selection-end-line="105" selection-end-column="10" />
+          <folding>
+            <marker date="1492508424808" expanded="true" signature="2206:2387" ph="SELECT *, TI... user" />
+            <marker date="1492508424808" expanded="true" signature="2267:2338" ph="SELECT `name... category" />
+            <marker date="1492508424808" expanded="true" signature="2572:2623" ph="SELECT time " />
+            <marker date="1492508424808" expanded="true" signature="3337:3563" ph="SELECT `id`,... user" />
+            <marker date="1492508424808" expanded="true" signature="3451:3524" ph="SELECT `cate... category" />
+            <marker date="1492508424808" expanded="true" signature="3672:3725" ph="SELECT `coun... user" />
+            <marker date="1492508424808" expanded="true" signature="3942:4048" ph="UPDATE `user... " />
+            <marker date="1492508424808" expanded="true" signature="3976:3995" ph="SELECT `coun... " />
+            <marker date="1492508424808" expanded="true" signature="4224:4291" ph="UPDATE `user... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/presenters/ControllerPresenter.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="26" column="26" lean-forward="true" selection-start-line="26" selection-start-column="26" selection-end-line="26" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/presenters/templates/@layout.latte">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="35" column="115" lean-forward="true" selection-start-line="35" selection-start-column="66" selection-end-line="35" selection-end-column="115" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/config.neon">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="22" column="27" lean-forward="false" selection-start-line="22" selection-start-column="27" selection-end-line="22" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/presenters/SouteziciPresenter.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="17" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/presenters/HomepagePresenter.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="21" column="25" lean-forward="false" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
           <folding>
             <element signature="e#34#44#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/presenters/KategoriePresenter.php">
+    <entry file="file://$PROJECT_DIR$/app/model/InfoManager.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="8" column="46" lean-forward="true" selection-start-line="8" selection-start-column="46" selection-end-line="8" selection-end-column="46" />
+        <state relative-caret-position="90">
+          <caret line="12" column="31" lean-forward="false" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/presenters/templates/Homepage/default.latte">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="11" column="52" lean-forward="false" selection-start-line="11" selection-start-column="52" selection-end-line="11" selection-end-column="52" />
           <folding />
         </state>
       </provider>

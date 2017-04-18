@@ -35,10 +35,20 @@ class SouteziciPresenter extends BasePresenter
     protected function createComponentSouteziciForm()
     {
         $form = new Form;
-        $form->addText('start_number', 'start číslo:');
-        $form->addText('first_name', 'jmeno:');
-        $form->addText('last_name', 'přijmeni:');
-        $form->addText('birth_year', 'datum narozeni:');
+        $form->addText('start_number', 'start číslo:')
+            ->setType('number')
+            ->setRequired(FALSE)
+            ->addRule(Form::RANGE, 'startovaci cislo musi byt v platnem rozsahu [0, 1000] ', [0, 1000]);
+        $form->addText('first_name', 'jmeno:')
+            ->setRequired('Zadejte prosím jméno')
+            ->addRule(Form::MIN_LENGTH, 'musí mít min 3 znaky', 3);
+        $form->addText('last_name', 'přijmeni:')
+            ->setRequired('Zadejte prosím příjmení')
+            ->addRule(Form::MIN_LENGTH, 'musí mít min 3 znaky', 3);
+        $form->addText('birth_year', 'datum narozeni:')
+            ->setType('number')
+            ->setRequired(FALSE)
+            ->addRule(Form::RANGE, 'rocnik musi byt v rozsahu 1900 až 2200', [1900, 2200]);
         $form->addSelect('category', 'kategorie',$this->KategorieManager->getPole());
         $form->addSubmit('submit', 'odeslat');
         $form->onSuccess[] = [$this, 'souteziciFormSucceeded'];

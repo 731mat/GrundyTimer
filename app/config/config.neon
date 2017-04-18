@@ -20,6 +20,7 @@ services:
 	- App\Model\SouteziciManager
 	- App\Model\KategorieManager
 	- App\Model\RaceManager
+	- App\Model\InfoManager
 	- App\Forms\FormFactory
 	- App\Forms\SignInFormFactory
 	- App\Forms\SignUpFormFactory

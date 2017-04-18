@@ -1,5 +1,22 @@
 {block content}
-	pokus
+	<div class="jumbotron">
+
+		<h1><i class="fa fa-black-tie" aria-hidden="true"></i> GrundyTimer</h1>
+		<p>Webová aplikace, pro měření času.</p>
+	</div>
+	<div class="well">
+		<h4>Info o závodu</h4>
+		Název závodu: <strong>{$data->name}</strong><br>
+		Místo konání: <strong>{$data->adress}</strong><br>
+		Adresa:       <strong>{$data->date|date:'%d.%m.%Y'}</strong><br>
+		<button type="button" class="btn btn-default">edit</button>
+	</div>
+	<div class="well">
+		<h4>Statistiky</h4>
+		pocet soutezici: <strong>{$data->name}</strong><br>
+		Místo konání: <strong>{$data->adress}</strong><br>
+		Adresa:       <strong>{$data->date|date:'%d.%m.%Y'}</strong>
+	</div>
 {/block}
 
 {block scripts}
