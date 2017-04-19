@@ -76,15 +76,15 @@ class KategorieManager
         return $tempArray;
     }
     public function getPoleObsazeniKategorie(){
-        $categories = $this->getAll();
-        foreach($categories as $category){
-            $tempArray[$category->id] = $category->name;
-        }
-        return $tempArray;
+       return $this->database->query("SELECT (SELECT category.name FROM category WHERE category.id = user.category) AS name, COUNT(user.category) AS pocet FROM user GROUP BY user.category ")->fetchAll();
     }
 
     // fukce která vrací kolik bylo max v tabulce zaznamů
     public function getMaxRoundInCategory(){
        return $this->database->query("SELECT MAX(`count_round`) AS `max` FROM `category`")->fetch()['max'];
+    }
+    // fukce která vrací kolik bylo max v tabulce zaznamů  V kategorii
+    public function getMaxRoundInCategoryById($id){
+       return $this->database->query("SELECT MAX(`count_round`) AS `max` FROM `category` WHERE `category`.`id` = ?",$id)->fetch()['max'];
     }
 }

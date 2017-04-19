@@ -1,0 +1,69 @@
+{block content}
+    <h2>{$data->first_name} {$data->last_name}</h2>
+    <h4>Ročník: {$data->birth_year}</h4>
+    <br>
+    <br>
+    <div class="well">
+        <h4 class="text-center">Casy odjetých kol v tabulce</h4>
+        <table class="table table-bordered" width="100%">
+            <thead>
+            {foreach $dataCasy as $index => $cas}
+                <th>kolo {$index}</th>
+            {/foreach}
+            </thead>
+            <tbody>
+            <tr>
+            {foreach $dataCasy as $index => $cas}
+              <td>{$cas->time|date:'%H:%i:%s'}</td>
+            {/foreach}
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="well">
+        <h4 class="text-center">Casy odjetých kol v grafu</h4>
+        <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+    </div>
+{/block}
+
+{block scripts}
+    {include parent}
+    <script type="text/javascript">
+        window.onload = function () {
+            var chart = new CanvasJS.Chart("chartContainer",
+                {
+                    backgroundColor: "#F5F5F5",
+                    title:{
+                        text: ""
+                    },
+                    animationEnabled: true,
+                    axisY: {
+                        title: "cas v sekundach"
+                    },
+                    legend: {
+                        verticalAlign: "bottom",
+                        horizontalAlign: "center"
+                    },
+                    theme: "theme2",
+                    data: [
+
+                        {
+                            type: "line",
+                            dataPoints: [
+                                {foreach $dataCasy as $cas}
+                                {  y: {$cas->time->h*3600 + $cas->time->i*60 + $cas->time->s}, legend:"pokus"},
+                                {/foreach}
+                            ]
+                        }
+                    ]
+                });
+
+            chart.render();
+        }
+    </script>
+    <script type="text/javascript" src="{$basePath}/js/canvasjs.min.js"></script>
+{/block}
+
+
+{block head}
+{/block}

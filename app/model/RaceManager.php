@@ -46,7 +46,7 @@ class RaceManager
             // dotazy se ukadaji za sebe do promenne
             $pocetKol = $this->kategorieManager->getById($kategorie);
             $pocetKol = $pocetKol['count_round'];
-            $dotazy = $dotazy."UPDATE `user` SET `start_time` = time(now()), `countRound` = ".$pocetKol." WHERE `user`.`category` = ".$kategorie." AND `user`.`start_time` IS NULL;";
+            $dotazy = $dotazy."UPDATE `user` SET `start_time` = time(now()), `finish_time` = NULL, `round_time` = NULL, `countRound` = ".$pocetKol." WHERE `user`.`category` = ".$kategorie." AND `user`.`start_time` IS NULL;";
         }
         // ulozene dotazy se najednou vsechny provedou
         $this->database->query($dotazy);
@@ -62,12 +62,26 @@ class RaceManager
         }
         $this->database->query($dotazy1);
     }
+
+    //INSERT INTO `round` (`id`, `time`, `idUser`) VALUES (NULL, TIMEDIFF(TIMEDIFF(time(now()),(SELECT user.start_time FROM user WHERE user.id = ?)),(SELECT SEC_TO_TIME( SUM(time_to_sec(`time`)))  FROM `round` WHERE `idUser` = ?)), ?)
+
+
     public function addRound($id){
         try{
-            $this->database->query("INSERT INTO `round` (`id`, `time`, `idUser`) VALUES (NULL, time(now()), ?)",$id);
+            $this->database->query("INSERT INTO `round` (`id`, `time`, `idUser`) VALUES (NULL, TIMEDIFF(time(now()),(SELECT user.start_time FROM user WHERE user.id = ?)), ?)",$id,$id);
         }catch(Exeption $e){
             throw new Exception();
         }
     }
+
+    public function deleteAllTime(){
+        try{
+            $this->database->query("UPDATE `user` SET `start_time` = NULL, finish_time = NULL, round_time = NULL ");
+        }catch(Exeption $e){
+            throw new Exception();
+        }
+    }
+
+
 
 }

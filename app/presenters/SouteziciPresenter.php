@@ -22,7 +22,11 @@ class SouteziciPresenter extends BasePresenter
         $this->flashMessage("smazáno");
         $this->redirect("default");
     }
-
+    public function actionChacked($id){
+        $this->SouteziciManager->chacked($id);
+        $this->flashMessage("oznaceno");
+        $this->redirect("default");
+    }
     public function renderDefault($order = 'start_number')
     {
         $this->template->data = $this->SouteziciManager->getAll($order);
@@ -50,6 +54,7 @@ class SouteziciPresenter extends BasePresenter
             ->setRequired(FALSE)
             ->addRule(Form::RANGE, 'rocnik musi byt v rozsahu 1900 až 2200', [1900, 2200]);
         $form->addSelect('category', 'kategorie',$this->KategorieManager->getPole());
+        $form->addCheckbox('chacked','ZDE');
         $form->addSubmit('submit', 'odeslat');
         $form->onSuccess[] = [$this, 'souteziciFormSucceeded'];
         return $form;
@@ -66,5 +71,11 @@ class SouteziciPresenter extends BasePresenter
             $this->SouteziciManager->insert($values);
         }
         $this->redirect('default');
+    }
+
+    public function renderDetail($id)
+    {
+        $this->template->data = $this->SouteziciManager->getById($id);
+        $this->template->dataCasy = $this->SouteziciManager->getRoundfromUserId($id);
     }
 }

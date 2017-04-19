@@ -1,0 +1,30 @@
+{block content}
+{/block}
+{block contentBezOkraju}
+    <table class="table table-bordered" width="100%">
+    {for $row = 0; $row < $countRow; $row++}
+       <tr id="row{$row}" style="font-size: {500/$countRow}px"><td></td><td></td><td></td></tr>
+    {/for}
+    </table>
+{/block}
+
+{block scripts}
+    {include parent}
+    <script>
+
+        setInterval(ajaxCall, 700);
+
+        function ajaxCall() {
+            $.get("../jsondisplay/"+{$countRow}, function(data, status){
+                for(var i = 0; i < data.length; i++){
+                    $("#row"+i).html("<td>"+data[i].start_number+"</td><td>"+data[i].cout_round+"</td><td style='padding-left: 20%'>"+data[i].odstartu+"</td>");
+
+                }
+            });
+        }
+    </script>
+{/block}
+
+
+{block head}
+{/block}

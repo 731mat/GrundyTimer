@@ -440,7 +440,8 @@ class Container_e7957aaed7 extends Nette\DI\Container
 	public function createServiceApplication__4(): App\Presenters\VysledkyPresenter
 	{
 		$service = new App\Presenters\VysledkyPresenter($this->getService('29_App_Model_RaceManager'),
-			$this->getService('30_App_Model_SouteziciManager'), $this->getService('28_App_Model_KategorieManager'));
+			$this->getService('30_App_Model_SouteziciManager'), $this->getService('28_App_Model_KategorieManager'),
+			$this->getService('27_App_Model_InfoManager'));
 		$service->injectPrimary($this, $this->getService('application.presenterFactory'),
 			$this->getService('routing.router'), $this->getService('http.request'),
 			$this->getService('http.response'), $this->getService('session.session'),
@@ -485,7 +486,8 @@ class Container_e7957aaed7 extends Nette\DI\Container
 
 	public function createServiceApplication__8(): App\Presenters\HomepagePresenter
 	{
-		$service = new App\Presenters\HomepagePresenter($this->getService('27_App_Model_InfoManager'));
+		$service = new App\Presenters\HomepagePresenter($this->getService('27_App_Model_InfoManager'),
+			$this->getService('28_App_Model_KategorieManager'));
 		$service->injectPrimary($this, $this->getService('application.presenterFactory'),
 			$this->getService('routing.router'), $this->getService('http.request'),
 			$this->getService('http.response'), $this->getService('session.session'),

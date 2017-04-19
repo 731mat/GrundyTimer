@@ -6,21 +6,74 @@
 	</div>
 	<div class="well">
 		<h4>Info o závodu</h4>
-		Název závodu: <strong>{$data->name}</strong><br>
-		Místo konání: <strong>{$data->adress}</strong><br>
-		Adresa:       <strong>{$data->date|date:'%d.%m.%Y'}</strong><br>
-		<button type="button" class="btn btn-default">edit</button>
+		Název závodu: <strong>{$dataInfo->name}</strong><br>
+		Místo konání: <strong>{$dataInfo->adress}</strong><br>
+		cas:       <strong>{$dataInfo->date|date:'%d.%m.%Y'}</strong><br>
+		<a n:href="edit" type="button" class="btn btn-default	">edit</a>
 	</div>
 	<div class="well">
-		<h4>Statistiky</h4>
-		pocet soutezici: <strong>{$data->name}</strong><br>
-		Místo konání: <strong>{$data->adress}</strong><br>
-		Adresa:       <strong>{$data->date|date:'%d.%m.%Y'}</strong>
+		<h4>Statistiky kategorie</h4>
+		<div class="row">
+			<div class="col-sm-4">
+				<table class="table" width="100%">
+                    <thead>
+                    <th>nazev kategorie</th>
+                    <th>pocet zaregistrovaných</th>
+                    </thead>
+                    <tbody>
+                    {foreach $dataKategorie as $kat}
+                    <tr><td>{$kat->name}</td>
+                        <td>{$kat->pocet}</td></tr>
+                    {/foreach}
+                    </tbody>
+                </table>
+
+			</div>
+			<div class="col-sm-8">
+				<div id="chartContainer" style="height: 200px; width: 100%;"></div>
+			</div>
+		</div>
+
+
 	</div>
 {/block}
 
 {block scripts}
 {include parent}
+	<script type="text/javascript">
+        window.onload = function () {
+            var chart = new CanvasJS.Chart("chartContainer",
+                {
+                    backgroundColor: "#F5F5F5",
+                    title:{
+                        text: ""
+                    },
+                    animationEnabled: true,
+                    legend:{
+                        verticalAlign: "center",
+                        horizontalAlign: "left"
+                    },
+                    data: [
+                        {
+                            indexLabelFontSize: 20,
+                            indexLabelFontFamily: "Monospace",
+                            indexLabelFontColor: "darkgrey",
+                            indexLabelLineColor: "darkgrey",
+                            indexLabelPlacement: "outside",
+                            type: "pie",
+                            showInLegend: true,
+                            dataPoints: [
+                            {foreach $dataKategorie as $kat}
+                                {  y: {$kat->pocet}, legendText:{$kat->name}, indexLabel: {$kat->name}},
+                            {/foreach}
+                            ]
+                        }
+                    ]
+                });
+            chart.render();
+        }
+	</script>
+	<script type="text/javascript" src="{$basePath}/js/canvasjs.min.js"></script>
 {/block}
 
 

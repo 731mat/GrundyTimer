@@ -22,6 +22,20 @@ class ControllerPresenter extends BasePresenter
         $this->template->tlacitka = $this->souteziciManager->getAll();
     }
 
+    public function renderDisplay($id){
+        $this->template->countRow = $id;
+    }
+
+    public function actionJsondisplay($id)
+    {
+        $vystup = array();
+        foreach ($this->souteziciManager->getPoepleForControllerDisplay($id) as $people){
+            $a = array( "id" => $people['id'], "start_number" => $people['start_number'], "cout_round" => $people['countRound'], "odstartu" =>$people['odstartu']);
+            array_push($vystup,$a);
+        }
+        $this->sendResponse( new Nette\Application\Responses\JsonResponse($vystup) );
+    }
+
     public function actionJson()
     {
         $vystup = array();

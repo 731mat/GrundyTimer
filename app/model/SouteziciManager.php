@@ -79,6 +79,15 @@ class SouteziciManager
         }
     }
 
+    public function chacked($id)
+    {
+        try{
+            $this->database->query("UPDATE `user` SET `chacked` = 1 WHERE `user`.`id` = ? ", $id);
+        }catch(Exeption $e){
+            throw new Exception();
+        }
+    }
+
     public function getPeopleStarted(){
         return $this->database->table(self::TABLE_NAME)->where(self::COLUMN_FINISHTIME." IS NULL")->fetchAll();
     }
@@ -107,6 +116,27 @@ class SouteziciManager
         return $vystup;
     }
 
+    public function getPeopleInFinnishByCategory($id){
+        $data = ($this->database->query("SELECT *, TIMEDIFF(`finish_time`,`start_time`) AS `rozdil`, (SELECT `name` FROM `category` WHERE `category`.`id` = `user`.`category`) AS `categoryName` FROM `user` WHERE `user`.`category` = ? ORDER BY `rozdil` ",$id)->fetchAll());
+        $vystup = array();
+        $pomocnyVystup = array();
+        $pomocnyCas = array();
+        foreach ($data as $d){
+            $casy = $this->database->query("SELECT time FROM `round` WHERE `round`.`idUser` = ?",$d['id'])->fetchAll();
+            $pomocnyVystup = array();
+            $pomocnyCas = array();
+            foreach ($d as $key => $value){
+                $pomocnyVystup[$key] = $value;
+            }
+            foreach ($casy as $key => $value){
+                $pomocnyCas[$key] = $value['time'];
+            }
+            $pomocnyVystup['casy'] = $pomocnyCas;
+            array_push($vystup, $pomocnyVystup);
+        }
+        //dump($vystup);
+        return $vystup;
+    }
 
 
 
@@ -115,6 +145,17 @@ class SouteziciManager
         //"id" => $people['id'], "start_number" => $people['start_number'], "cout_round" => $people['countRound'], "enable" =>$people['enable']
         return $this->database->query("SELECT `id`, `start_number`, `countRound`, IF(`round_time` IS NOT NULL ,IF(TIMEDIFF(time(now()), `round_time`) > (SELECT `category`.`min_time` FROM `category` WHERE id = `user`.`category`),'1','0'),'1') AS `enable` FROM `user` ")->fetchAll();
     }
+
+    public function getPoepleForControllerDisplay($limit){
+        $limit = $limit-'0';
+        if ($limit > 13)  $limit = 13;
+        if ($limit < 1)  $limit = 1;
+        //"id" => $people['id'], "start_number" => $people['start_number'], "cout_round" => $people['countRound'], "enable" =>$people['enable']
+        return $this->database->query("SELECT `id`, `start_number`, `countRound`, DATE_FORMAT(TIMEDIFF(time(now()), `round_time`),'%h:%i:%s') as `odstartu` FROM `user` WHERE `round_time` IS NOT NULL ORDER BY `odstartu` ASC LIMIT 0,?",$limit)->fetchAll();
+    }
+
+
+
     public function stepDownRound($id){
         $dataPeople = $this->database->query("SELECT `countRound` FROM `user` WHERE `user`.`id` = ? ",$id)->fetch();
 
@@ -133,5 +174,8 @@ class SouteziciManager
             return true;
         }
         return false;
+    }
+    public function getRoundfromUserId($id){
+        return $this->database->query("SELECT time FROM `round` WHERE `round`.`idUser` = ?",$id)->fetchAll();
     }
 }

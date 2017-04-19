@@ -8,6 +8,7 @@
             <th>Přijmení</th>
             <th>datum narození</th>
             <th>kategorie</th>
+            <th>ZDE</th>
             <th class="text-center">Akce</th>
         </tr>
         </thead>
@@ -18,8 +19,14 @@
             <td>{$soutezici->last_name}</td>
             <td>{$soutezici->birth_year}</td>
             <td>{$soutezici->ref('category','category')->name}</td>
-            <td><a n:href="edit $soutezici->id" class="btn btn-primary" role="button"><i class="fa fa-edit"></i> edit</a>
-                <a n:href="delete $soutezici->id" class="btn btn-danger" role="button" onclick="return confirm('Opravdu to chceš?');"><i class="fa fa-trash"></i> Smazat</a>
+            <td><a n:href="chacked $soutezici->id">
+                {if $soutezici->chacked}<i class="fa fa-thumbs-o-up" aria-hidden="true" style="color: #5CB85C;"></i>
+                {else}<i class="fa fa-thumbs-o-down" aria-hidden="true" style="color: #D9534F;"></i>
+                {/if}</a>
+                </td>
+            <td><a n:href="detail $soutezici->id" class="btn btn-success" role="button"><i class="fa fa-list"></i></a>
+                <a n:href="edit $soutezici->id" class="btn btn-primary" role="button"><i class="fa fa-edit"></i></a>
+                <a n:href="delete $soutezici->id" class="btn btn-danger" role="button" onclick="return confirm('Opravdu to chceš?');"><i class="fa fa-trash"></i></a>
             </td>
         </tr>
         </tbody>

@@ -37,5 +37,6 @@ class StartPresenter extends BasePresenter
     public function startFormSucceeded(Form $form, $values)
     {
         $this->raceManager->peopleStart($values);
+        $this->flashMessage("Odstartováno !!!!!!!!");
     }
 }

@@ -31,10 +31,10 @@ class InfoManager
     }
 
 
-    public function update($name, $values)
+    public function update($values)
     {
         try{
-            $this->database->table(self::TABLE_NAME)->where(self::COLUMN_JMENO, $name)->update($values);
+            $this->database->table(self::TABLE_NAME)->update($values);
         }catch(Exeption $e){
             throw new Exception();
         }

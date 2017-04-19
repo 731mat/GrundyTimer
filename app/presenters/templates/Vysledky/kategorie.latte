@@ -1,7 +1,4 @@
 {block content}
-    <a n:foreach="$dataKategorie as $kat" n:href="kategorie $kat->id" class="btn btn-success" role="button">
-        {$kat->name} <span class="badge">{$kat->count_round} kol</span>
-    </a>
     <table id="souetziciTable" class="display nowrap" width="100%" cellspacing="0">
         <thead>
         <tr>
@@ -45,9 +42,9 @@
                         extend: 'pdf',
                         text: 'Uložit PDF',
                         orientation: 'landscape',
-                        filename:{$dataInfo->name|webalize."-ALL"},
-                        title:{$dataInfo->name." - přehled všech"},
-                        message:'©GrundyTimer',
+                        filename:{$dataInfo->name|webalize."-".$dataKategorie->name},
+                        title:{$dataInfo->name." - ".$dataKategorie->name},
+                        message:{$dataInfo->adress}+" "+{$dataInfo->date|date:'%d.%m.%Y'}+"      -   ©GrundyTimer  časomíra ",
                         exportOptions: {
                             modifier: {
                                 page: 'current'
@@ -57,8 +54,8 @@
                     {
                         extend: 'print',
                         text: 'vytiskni',
-                        title:{$dataInfo->name." - Přehled všch"},
-                        message:'©GrundyTimer',
+                        title:{$dataInfo->name." - ".$dataKategorie->name},
+                        message:{$dataInfo->adress}+" "+{$dataInfo->date|date:'%d.%m.%Y'}+"      -   ©GrundyTimer  časomíra ",
                         exportOptions: {
                             stripHtml: false,
                             modifier: {

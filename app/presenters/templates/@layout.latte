@@ -7,7 +7,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>{ifset title}{include title|stripHtml} | {/ifset}GRUNDYbike	</title>
+	<title>{ifset title}{include title|stripHtml} | {/ifset}GrundyTimer	</title>
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="{$basePath}/css/style.css">
@@ -36,22 +36,40 @@
 				<a class="navbar-brand" n:href="Homepage:default"><i class="fa fa-black-tie" aria-hidden="true"></i> GrundyTimer</a>
 			</div>
 			<ul class="nav navbar-nav">
-				<li><a n:href="Homepage:default">Info</a></li>
-				<li><a n:href="Soutezici:default">Soutěžící</a></li>
-				<li><a n:href="Kategorie:default">Kategorie</a></li>
-				<li><a n:href="Start:default">start</a></li>
-				<li><a n:href="Controller:default">prujezdovy tablet</a></li>
-				<li><a n:href="Vysledky:default">vysledky</a></li>
+				<li {ifCurrent Homepage:} class="active"{/ifCurrent}><a n:href="Homepage:default">Info</a></li>
+				<li {ifCurrent Soutezici:} class="active"{/ifCurrent}><a n:href="Soutezici:default">Soutěžící</a></li>
+				<li {ifCurrent Kategorie:} class="active"{/ifCurrent}><a n:href="Kategorie:default">Kategorie</a></li>
+				<li {ifCurrent Start:} class="active"{/ifCurrent}><a n:href="Start:default">start</a></li>
+				<li {ifCurrent Controller:} class="active"{/ifCurrent}><a n:href="Controller:default">prujezdovy tablet</a></li>
+				<li {ifCurrent Vysledky:} class="active"{/ifCurrent}><a n:href="Vysledky:default">vysledky</a></li>
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">Display
+						<span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li {ifCurrent Controller:display 1} class="active"{/ifCurrent}><a n:href="Controller:display 1">1</a></li>
+						<li {ifCurrent Controller:display 2} class="active"{/ifCurrent}><a n:href="Controller:display 2">2</a></li>
+						<li {ifCurrent Controller:display 3} class="active"{/ifCurrent}><a n:href="Controller:display 3">3</a></li>
+						<li {ifCurrent Controller:display 4} class="active"{/ifCurrent}><a n:href="Controller:display 4">4</a></li>
+						<li {ifCurrent Controller:display 5} class="active"{/ifCurrent}><a n:href="Controller:display 5">5</a></li>
+						<li {ifCurrent Controller:display 6} class="active"{/ifCurrent}><a n:href="Controller:display 6">6</a></li>
+						<li {ifCurrent Controller:display 7} class="active"{/ifCurrent}><a n:href="Controller:display 7">7</a></li>
+						<li {ifCurrent Controller:display 8} class="active"{/ifCurrent}><a n:href="Controller:display 8">8</a></li>
+					</ul>
+				</li>
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="#"><span class="fa fa-sign-in"></span> Login</a></li>
 			</ul>
 		</div>
 	</nav>
 	<div class="container">
 
 
-	<div n:foreach="$flashes as $flash" n:class="flash, $flash->type">{$flash->message}</div>
+	<div n:foreach="$flashes as $flash" n:class="alert,flash, $flash->type" >{$flash->message}</div>
 
 	{include content}
 	</div>
+    {include contentBezOkraju}
 	{block scripts}
 
 	<script src="{$basePath}/js/bootstrap.min.js"></script>
