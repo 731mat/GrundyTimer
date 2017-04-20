@@ -12,6 +12,14 @@ class SouteziciPresenter extends BasePresenter
     private $SouteziciManager;
     private $KategorieManager;
 
+    public function startup(){
+        parent::startup();
+        if (!$this->userData->isLoggedIn()){
+            $this->flashMessage("Nemáš oprávnění");
+            $this->redirect("Homepage:");
+        }
+    }
+
     function __construct(SouteziciManager $souteziciManager, KategorieManager $kategorieManager) {
         $this->SouteziciManager = $souteziciManager;
         $this->KategorieManager = $kategorieManager;

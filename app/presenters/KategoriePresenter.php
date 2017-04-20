@@ -10,6 +10,14 @@ class KategoriePresenter extends BasePresenter
 {
     private $KategorieManager;
 
+    public function startup(){
+        parent::startup();
+        if (!$this->userData->isLoggedIn()){
+            $this->flashMessage("Nemáš oprávnění");
+            $this->redirect("Homepage:");
+        }
+    }
+
     function __construct(KategorieManager $kategorieManager) {
         $this->KategorieManager = $kategorieManager;
     }

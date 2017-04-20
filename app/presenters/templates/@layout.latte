@@ -36,30 +36,39 @@
 				<a class="navbar-brand" n:href="Homepage:default"><i class="fa fa-black-tie" aria-hidden="true"></i> GrundyTimer</a>
 			</div>
 			<ul class="nav navbar-nav">
-				<li {ifCurrent Homepage:} class="active"{/ifCurrent}><a n:href="Homepage:default">Info</a></li>
-				<li {ifCurrent Soutezici:} class="active"{/ifCurrent}><a n:href="Soutezici:default">Soutěžící</a></li>
-				<li {ifCurrent Kategorie:} class="active"{/ifCurrent}><a n:href="Kategorie:default">Kategorie</a></li>
-				<li {ifCurrent Start:} class="active"{/ifCurrent}><a n:href="Start:default">start</a></li>
-				<li {ifCurrent Controller:} class="active"{/ifCurrent}><a n:href="Controller:default">prujezdovy tablet</a></li>
-				<li {ifCurrent Vysledky:} class="active"{/ifCurrent}><a n:href="Vysledky:default">vysledky</a></li>
-				<li class="dropdown">
-					<a class="dropdown-toggle" data-toggle="dropdown" href="#">Display
-						<span class="caret"></span></a>
-					<ul class="dropdown-menu">
-						<li {ifCurrent Controller:display 1} class="active"{/ifCurrent}><a n:href="Controller:display 1">1</a></li>
-						<li {ifCurrent Controller:display 2} class="active"{/ifCurrent}><a n:href="Controller:display 2">2</a></li>
-						<li {ifCurrent Controller:display 3} class="active"{/ifCurrent}><a n:href="Controller:display 3">3</a></li>
-						<li {ifCurrent Controller:display 4} class="active"{/ifCurrent}><a n:href="Controller:display 4">4</a></li>
-						<li {ifCurrent Controller:display 5} class="active"{/ifCurrent}><a n:href="Controller:display 5">5</a></li>
-						<li {ifCurrent Controller:display 6} class="active"{/ifCurrent}><a n:href="Controller:display 6">6</a></li>
-						<li {ifCurrent Controller:display 7} class="active"{/ifCurrent}><a n:href="Controller:display 7">7</a></li>
-						<li {ifCurrent Controller:display 8} class="active"{/ifCurrent}><a n:href="Controller:display 8">8</a></li>
-					</ul>
-				</li>
+				<li{ifCurrent Homepage:} class="active"{/ifCurrent}><a n:href="Homepage:default">Info</a></li>
+				<li{ifCurrent Vysledky:} class="active"{/ifCurrent}><a n:href="Vysledky:default">Vysledky</a></li>
+                {if $user->loggedIn}
+					<li{ifCurrent Soutezici:} class="active"{/ifCurrent}><a n:href="Soutezici:default">Soutěžící</a></li>
+					<li{ifCurrent Kategorie:} class="active"{/ifCurrent}><a n:href="Kategorie:default">Kategorie</a></li>
+					<li{ifCurrent Start:} class="active"{/ifCurrent}><a n:href="Start:default">Start</a></li>
+					<li{ifCurrent Controller:} class="active"{/ifCurrent}><a n:href="Controller:default">prujezdovy tablet</a></li>
+					<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#">Display
+							<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li{ifCurrent Controller:display 1} class="active"{/ifCurrent}><a n:href="Controller:display 1">1</a></li>
+							<li{ifCurrent Controller:display 2} class="active"{/ifCurrent}><a n:href="Controller:display 2">2</a></li>
+							<li{ifCurrent Controller:display 3} class="active"{/ifCurrent}><a n:href="Controller:display 3">3</a></li>
+							<li{ifCurrent Controller:display 4} class="active"{/ifCurrent}><a n:href="Controller:display 4">4</a></li>
+							<li{ifCurrent Controller:display 5} class="active"{/ifCurrent}><a n:href="Controller:display 5">5</a></li>
+							<li{ifCurrent Controller:display 6} class="active"{/ifCurrent}><a n:href="Controller:display 6">6</a></li>
+							<li{ifCurrent Controller:display 7} class="active"{/ifCurrent}><a n:href="Controller:display 7">7</a></li>
+							<li{ifCurrent Controller:display 8} class="active"{/ifCurrent}><a n:href="Controller:display 8">8</a></li>
+						</ul>
+					</li>
+				{/if}
 			</ul>
+
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="#"><span class="fa fa-sign-in"></span> Login</a></li>
+                {if $user->loggedIn}
+					<li>{$user->getIdentity()->roles['name']}</li>
+					<li><a n:href="Sign:out"><span class="fa fa-sign-out"></span> Odhlásit</a></li>
+                {else}
+					<li><a n:href="Sign:in"><span class="fa fa-sign-in"></span> Login</a></li>
+				{/if}
 			</ul>
+
 		</div>
 	</nav>
 	<div class="container">
@@ -69,11 +78,9 @@
 
 	{include content}
 	</div>
-    {include contentBezOkraju}
 	{block scripts}
 
 	<script src="{$basePath}/js/bootstrap.min.js"></script>
-	<script src="https://nette.github.io/resources/js/netteForms.min.js"></script>
 	<script src="{$basePath}/js/main.js"></script>
 	{/block}
 </body>

@@ -14,6 +14,14 @@ class StartPresenter extends BasePresenter
     private $raceManager;
     private $kategorieManager;
 
+    public function startup(){
+        parent::startup();
+        if (!$this->userData->isLoggedIn()){
+            $this->flashMessage("Nemáš oprávnění");
+            $this->redirect("Homepage:");
+        }
+    }
+
     function __construct(RaceManager $raceManager, KategorieManager $kategorieManager) {
         $this->raceManager = $raceManager;
         $this->kategorieManager = $kategorieManager;

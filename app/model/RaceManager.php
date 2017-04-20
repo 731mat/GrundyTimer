@@ -62,13 +62,12 @@ class RaceManager
         }
         $this->database->query($dotazy1);
     }
-
-    //INSERT INTO `round` (`id`, `time`, `idUser`) VALUES (NULL, TIMEDIFF(TIMEDIFF(time(now()),(SELECT user.start_time FROM user WHERE user.id = ?)),(SELECT SEC_TO_TIME( SUM(time_to_sec(`time`)))  FROM `round` WHERE `idUser` = ?)), ?)
-
+    //dotaz INSERT INTO `round` (`id`, `time`, `idUser`) VALUES (NULL, TIMEDIFF( TIMEDIFF( time(now()), (SELECT user.start_time FROM user WHERE user.id = ?)), (SELECT IF((SEC_TO_TIME(SUM(time_to_sec(`kolo`.`time`))) IS NULL), '00:00:00', (SEC_TO_TIME( SUM(time_to_sec(`kolo`.`time`))))) FROM `round` AS `kolo` WHERE `kolo`.`idUser` = ? )) , ?)
 
     public function addRound($id){
         try{
-            $this->database->query("INSERT INTO `round` (`id`, `time`, `idUser`) VALUES (NULL, TIMEDIFF(time(now()),(SELECT user.start_time FROM user WHERE user.id = ?)), ?)",$id,$id);
+            //$this->database->query("INSERT INTO `round` (`id`, `time`, `idUser`) VALUES (NULL, TIMEDIFF(time(now()),(SELECT user.start_time FROM user WHERE user.id = ?)), ?)",$id,$id);
+            $this->database->query("INSERT INTO `round` (`id`, `time`, `idUser`) VALUES (NULL, TIMEDIFF( TIMEDIFF( time(now()), (SELECT user.start_time FROM user WHERE user.id = ?)), (SELECT IF((SEC_TO_TIME(SUM(time_to_sec(`kolo`.`time`))) IS NULL), '00:00:00', (SEC_TO_TIME( SUM(time_to_sec(`kolo`.`time`))))) FROM `round` AS `kolo` WHERE `kolo`.`idUser` = ? )) , ?)",$id,$id,$id);
         }catch(Exeption $e){
             throw new Exception();
         }

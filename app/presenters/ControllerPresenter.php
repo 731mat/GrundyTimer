@@ -13,6 +13,14 @@ class ControllerPresenter extends BasePresenter
     private $raceManager;
     private $souteziciManager;
 
+    public function startup(){
+        parent::startup();
+        if (!$this->userData->isLoggedIn()){
+            $this->flashMessage("Nemáš oprávnění");
+            $this->redirect("Homepage:");
+        }
+    }
+
     function __construct(RaceManager $raceManager, SouteziciManager $souteziciManager) {
         $this->raceManager = $raceManager;
         $this->souteziciManager = $souteziciManager;
