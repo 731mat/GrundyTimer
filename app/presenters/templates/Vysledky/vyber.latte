@@ -1,9 +1,21 @@
 {block content}
 
 
-    <a n:foreach="$dataKategorie as $kat" n:href="kategorie $kat->id" class="btn btn-success" role="button">
-        {$kat->name} <span class="badge">{$kat->count_round} kol</span>
-    </a>
+    <div class="row">
+        <div class="well">
+            <label>Filter:</label>
+            {foreach $dataKategorie as $kat}
+                <span class="button-checkbox">
+                <button type="button" class="btn" data-color="success">
+                        {$kat->name} <span class="badge">{$kat->count_round} kol</span></button>
+                <input type="checkbox" class="hidden" name="kategorie" onchange="filtr()" value={$kat->name} />
+            </span>
+            {/foreach}
+        </div>
+    </div>
+
+
+
     <table id="souetziciTable" class="display nowrap" width="100%" cellspacing="0">
         <thead>
         <tr>
@@ -18,6 +30,19 @@
             {/for}
         </tr>
         </thead>
+        <tfoot>
+        <tr>
+            <th>St. číslo</th>
+            <th>Jméno</th>
+            <th>Přijmeni</th>
+            <th>Ročník</th>
+            <th>Kategorie</th>
+            <th>Čas</th>
+            {for $i = 0; $i < $maxCulom; $i++ }
+                <th>kolo{$i+1}</th>
+            {/for}
+        </tr>
+        </tfoot>
         <tbody>
         <tr n:foreach="$data as $soutezici">
             <td>{$soutezici['start_number']}</td>
@@ -35,14 +60,6 @@
         </tbody>
     </table>
 
-    <div class="row">
-        <label for="OptionsSelect">Filter:</label>
-            <input n:foreach="$dataKategorie as $kat" type="checkbox" name="kategorie" value="{$kat->name}">
-                {$kat->name}
-            </input>
-            <button id="vyhledat">filtr</button>
-    </div>
-
 
 
 
@@ -54,21 +71,118 @@
 {block scripts}
     {include parent}
     <script>
-
-
-        var table = $('#souetziciTable').DataTable();
-
-
-        $('#vyhledat').on('click', function() {
-            $yourArray = "";
-            $("input:checkbox[name=kategorie]:checked").each(function(){
-                $yourArray =$(this).val()+' '+$yourArray;
-            });
-            table.search( 'senioři Junioři' ,true ).draw();
+        $('#souetziciTable').dataTable( {
+            "lengthChange": false,
+            "pageLength": 150,
+            dom: 'Bfrtip',
+            buttons: [
+                {
+                    extend: 'pdf',
+                    text: 'Uložit PDF',
+                    orientation: 'landscape',
+                    filename:{$dataInfo->name|webalize."-ALL"},
+                    title:{$dataInfo->name." - přehled všech"},
+                    message:'©GrundyTimer',
+                    exportOptions: {
+                        modifier: {
+                            page: 'current'
+                        }
+                    }
+                },
+                {
+                    extend: 'print',
+                    text: 'vytiskni',
+                    title:{$dataInfo->name." - Přehled všch"},
+                    message:'©GrundyTimer',
+                    exportOptions: {
+                        stripHtml: false,
+                        modifier: {
+                            page: 'current'
+                        }
+                    }
+                }
+            ]
         });
 
 
 
+
+        var table = $('#souetziciTable').DataTable();
+        function filtr() {
+            $yourArray = "";
+            $("input:checkbox[name=kategorie]:checked").each(function(){
+                $yourArray =$(this).val()+'|'+$yourArray;
+            });
+            table.column( 4 ).search( '^('+$yourArray+')$', true, false ).draw();
+        }
+
+
+
+        $(function () {
+            $('.button-checkbox').each(function () {
+
+                // Settings
+                var $widget = $(this),
+                    $button = $widget.find('button'),
+                    $checkbox = $widget.find('input:checkbox'),
+                    color = $button.data('color'),
+                    settings = {
+                        on: {
+                            icon: 'fa fa-check-square-o'
+                        },
+                        off: {
+                            icon: 'fa fa-square-o'
+                        }
+                    };
+
+                // Event Handlers
+                $button.on('click', function () {
+                    $checkbox.prop('checked', !$checkbox.is(':checked'));
+                    $checkbox.triggerHandler('change');
+                    updateDisplay();
+                });
+                $checkbox.on('change', function () {
+                    updateDisplay();
+                });
+
+                // Actions
+                function updateDisplay() {
+                    var isChecked = $checkbox.is(':checked');
+
+                    // Set the button's state
+                    $button.data('state', (isChecked) ? "on" : "off");
+
+                    // Set the button's icon
+                    $button.find('.state-icon')
+                        .removeClass()
+                        .addClass('state-icon ' + settings[$button.data('state')].icon);
+
+                    // Update the button's color
+                    if (isChecked) {
+                        $button
+                            .removeClass('btn-default')
+                            .addClass('btn-' + color + ' active');
+                    }
+                    else {
+                        $button
+                            .removeClass('btn-' + color + ' active')
+                            .addClass('btn-default');
+                    }
+                }
+
+                // Initialization
+                function init() {
+
+                    updateDisplay();
+
+                    // Inject the icon if applicable
+                    if ($button.find('.state-icon').length == 0) {
+                        $button.prepend('<i class="state-icon ' + settings[$button.data('state')].icon + '"></i> ');
+                    }
+                }
+                init();
+            });
+        });
     </script>
 {/block}
 

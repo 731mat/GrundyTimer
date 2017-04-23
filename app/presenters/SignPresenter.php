@@ -105,5 +105,15 @@ class SignPresenter extends BasePresenter
             }
         }
     }
+    public function renderVypis()
+    {
+        $this->template->data = $this->userManager->getAll();
+    }
+    public function actionDelete($id)
+    {
+        $this->userManager->delete($id);
+        $this->flashMessage("odstraněn");
+        $this->redirect(":vypis");
+    }
 
 }

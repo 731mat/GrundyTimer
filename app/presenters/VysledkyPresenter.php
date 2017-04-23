@@ -39,28 +39,10 @@ class VysledkyPresenter extends BasePresenter
         $this->template->dataInfo = $this->infoManager->getAll();
     }
 
-    public function renderVyber($data){
+    public function renderVyber(){
         $this->template->data = $this->souteziciManager->getPeopleInFinnish();
         $this->template->maxCulom = $this->kategorieManager->getMaxRoundInCategory();
         $this->template->dataInfo = $this->infoManager->getAll();
         $this->template->dataKategorie = $this->kategorieManager->getAll();
-    }
-
-
-
-    // volá se po úspěšném odeslání formuláře
-    public function vysledekCategoryFormSucceeded(Form $form, $values)
-    {
-        $this->redirect(':vyber', $values['category']);
-    }
-
-    protected function createComponentVysledekCategoryForm()
-    {
-        $form = new Form;
-        $form->addCheckboxList('category', 'název:', $this->kategorieManager->getPole());
-        $form->addSubmit('submit', 'odeslat');
-        $form->onSuccess[] = [$this, 'vysledekCategoryFormSucceeded'];
-        $this->renderForm($form);
-        return $form;
     }
 }

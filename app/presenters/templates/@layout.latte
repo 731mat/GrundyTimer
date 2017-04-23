@@ -63,8 +63,7 @@
 
 			<ul class="nav navbar-nav navbar-right">
                 {if $user->loggedIn}
-					<li><a href="#"><span class="fa fa-user"></span> {$user->getIdentity()->roles['name']}</a></li>
-					<li><a n:href="Sign:new"><span class="fa fa-plus"></span></a></li>
+					<li><a n:href="Sign:vypis"><span class="fa fa-user"></span> {$user->getIdentity()->roles['name']}</a></li>
 					<li><a n:href="Sign:out"><span class="fa fa-sign-out"></span> Odhlásit</a></li>
                 {else}
 					<li><a n:href="Sign:in"><span class="fa fa-sign-in"></span> Login</a></li>

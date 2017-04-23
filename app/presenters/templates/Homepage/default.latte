@@ -9,7 +9,9 @@
 		Název závodu: <strong>{$dataInfo->name}</strong><br>
 		Místo konání: <strong>{$dataInfo->adress}</strong><br>
 		cas:       <strong>{$dataInfo->date|date:'%d.%m.%Y'}</strong><br>
-		<a n:href="edit" type="button" class="btn btn-default	">edit</a>
+        {if $user->loggedIn}
+		    <a n:href="edit" type="button" class="btn btn-default">edit</a>
+        {/if}
 	</div>
 	<div class="well">
 		<h4>Statistiky kategorie</h4>

@@ -72,6 +72,19 @@ class UserManager extends Nette\Object implements Nette\Security\IAuthenticator
         }
     }
 
+    public function getAll($order = self::COLUMN_ID)
+    {
+        return $this->database->table(self::TABLE_NAME)->order($order)->fetchAll();
+    }
+
+    public function delete($id)
+    {
+        try{
+            $this->database->table(self::TABLE_NAME)->where(self::COLUMN_ID, $id)->delete();
+        }catch(Exeption $e){
+            throw new Exception();
+        }
+    }
 }
 
 
