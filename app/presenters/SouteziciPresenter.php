@@ -65,6 +65,7 @@ class SouteziciPresenter extends BasePresenter
         $form->addCheckbox('chacked','ZDE');
         $form->addSubmit('submit', 'odeslat');
         $form->onSuccess[] = [$this, 'souteziciFormSucceeded'];
+        $this->renderForm($form);
         return $form;
     }
 

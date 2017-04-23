@@ -71,10 +71,13 @@ class KategorieManager
     public function getPole(){
         $categories = $this->getAll();
         foreach($categories as $category){
-            $tempArray[$category->id] = $category->name;
+            $tempArray[$category->id] = $category->name.' ('.$category->count_round.' kol)';
         }
         return $tempArray;
     }
+
+
+
     public function getPoleObsazeniKategorie(){
        return $this->database->query("SELECT (SELECT category.name FROM category WHERE category.id = user.category) AS name, COUNT(user.category) AS pocet FROM user GROUP BY user.category ")->fetchAll();
     }

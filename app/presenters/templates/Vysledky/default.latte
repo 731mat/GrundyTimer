@@ -1,18 +1,19 @@
 {block content}
+
     <a n:foreach="$dataKategorie as $kat" n:href="kategorie $kat->id" class="btn btn-success" role="button">
         {$kat->name} <span class="badge">{$kat->count_round} kol</span>
     </a>
     <table id="souetziciTable" class="display nowrap" width="100%" cellspacing="0">
         <thead>
         <tr>
-            <th>number</th>
-            <th>jmeno</th>
-            <th>prijmeni</th>
-            <th>rocnik</th>
-            <th>kategorie</th>
-            <th>time</th>
+            <th>St. číslo</th>
+            <th>Jméno</th>
+            <th>Přijmeni</th>
+            <th>Ročník</th>
+            <th>Kategorie</th>
+            <th>Čas</th>
             {for $i = 0; $i < $maxCulom; $i++ }
-                <th>kolo{$i}</th>
+                <th>kolo{$i+1}</th>
             {/for}
         </tr>
         </thead>
@@ -24,8 +25,10 @@
             <td>{$soutezici['birth_year']}</td>
             <td>{$soutezici['categoryName']}</td>
             <td>{$soutezici['rozdil']|date:'%H:%i:%s'}</td>
-            <td n:foreach="$soutezici['casy'] as $cas">
-                {$cas|date:'%H:%i:%s'}
+            <td n:for="$x = 0; $x< $maxCulom;$x++">
+                {if !(sizeof($soutezici['casy']) <= $x)}
+                    {$soutezici['casy'][$x]|date:'%H:%i:%s'}
+                {/if}
             </td>
         </tr>
         </tbody>

@@ -1,0 +1,77 @@
+{block content}
+
+
+    <a n:foreach="$dataKategorie as $kat" n:href="kategorie $kat->id" class="btn btn-success" role="button">
+        {$kat->name} <span class="badge">{$kat->count_round} kol</span>
+    </a>
+    <table id="souetziciTable" class="display nowrap" width="100%" cellspacing="0">
+        <thead>
+        <tr>
+            <th>St. číslo</th>
+            <th>Jméno</th>
+            <th>Přijmeni</th>
+            <th>Ročník</th>
+            <th>Kategorie</th>
+            <th>Čas</th>
+            {for $i = 0; $i < $maxCulom; $i++ }
+                <th>kolo{$i+1}</th>
+            {/for}
+        </tr>
+        </thead>
+        <tbody>
+        <tr n:foreach="$data as $soutezici">
+            <td>{$soutezici['start_number']}</td>
+            <td>{$soutezici['first_name']}</td>
+            <td>{$soutezici['last_name']}</td>
+            <td>{$soutezici['birth_year']}</td>
+            <td>{$soutezici['categoryName']}</td>
+            <td>{$soutezici['rozdil']|date:'%H:%i:%s'}</td>
+            <td n:for="$x = 0; $x< $maxCulom;$x++">
+                {if !(sizeof($soutezici['casy']) <= $x)}
+                    {$soutezici['casy'][$x]|date:'%H:%i:%s'}
+                {/if}
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <div class="row">
+        <label for="OptionsSelect">Filter:</label>
+            <input n:foreach="$dataKategorie as $kat" type="checkbox" name="kategorie" value="{$kat->name}">
+                {$kat->name}
+            </input>
+            <button id="vyhledat">filtr</button>
+    </div>
+
+
+
+
+
+
+
+{/block}
+
+{block scripts}
+    {include parent}
+    <script>
+
+
+        var table = $('#souetziciTable').DataTable();
+
+
+        $('#vyhledat').on('click', function() {
+            $yourArray = "";
+            $("input:checkbox[name=kategorie]:checked").each(function(){
+                $yourArray =$(this).val()+' '+$yourArray;
+            });
+            table.search( 'senioři Junioři' ,true ).draw();
+        });
+
+
+
+    </script>
+{/block}
+
+
+{block head}
+{/block}

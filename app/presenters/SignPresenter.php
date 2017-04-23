@@ -42,6 +42,7 @@ class SignPresenter extends BasePresenter
             ->setRequired("Zadejte prosím heslo.");
         $form->addSubmit('submit','Přihlásit');
         $form->onSuccess[] = array($this, 'signInFormSucceeded');
+        $this->renderForm($form);
         return $form;
     }
 
@@ -80,6 +81,7 @@ class SignPresenter extends BasePresenter
             ->setRequired('Heslo je nutné zopakovat. Zamezíte tím možným překlepům.');
         $form->addSubmit('submit','Dokončit!');
         $form->onSuccess[] = array($this, 'signNewFormSucceeded');
+        $this->renderForm($form);
         return $form;
     }
 

@@ -38,6 +38,7 @@ class StartPresenter extends BasePresenter
         $form->addCheckboxList('category', 'název:', $this->kategorieManager->getPole());
         $form->addSubmit('submit', 'odeslat');
         $form->onSuccess[] = [$this, 'startFormSucceeded'];
+        $this->renderForm($form);
         return $form;
     }
 

@@ -42,7 +42,7 @@
 					<li{ifCurrent Soutezici:} class="active"{/ifCurrent}><a n:href="Soutezici:default">Soutěžící</a></li>
 					<li{ifCurrent Kategorie:} class="active"{/ifCurrent}><a n:href="Kategorie:default">Kategorie</a></li>
 					<li{ifCurrent Start:} class="active"{/ifCurrent}><a n:href="Start:default">Start</a></li>
-					<li{ifCurrent Controller:} class="active"{/ifCurrent}><a n:href="Controller:default">prujezdovy tablet</a></li>
+					<li{ifCurrent Controller:} class="active"{/ifCurrent}><a n:href="Controller:default">Tablet</a></li>
 					<li class="dropdown">
 						<a class="dropdown-toggle" data-toggle="dropdown" href="#">Display
 							<span class="caret"></span></a>
@@ -58,11 +58,13 @@
 						</ul>
 					</li>
 				{/if}
+
 			</ul>
 
 			<ul class="nav navbar-nav navbar-right">
                 {if $user->loggedIn}
-					<li>{$user->getIdentity()->roles['name']}</li>
+					<li><a href="#"><span class="fa fa-user"></span> {$user->getIdentity()->roles['name']}</a></li>
+					<li><a n:href="Sign:new"><span class="fa fa-plus"></span></a></li>
 					<li><a n:href="Sign:out"><span class="fa fa-sign-out"></span> Odhlásit</a></li>
                 {else}
 					<li><a n:href="Sign:in"><span class="fa fa-sign-in"></span> Login</a></li>
@@ -78,6 +80,8 @@
 
 	{include content}
 	</div>
+    {block contentBezOkraju}
+	{/block}
 	{block scripts}
 
 	<script src="{$basePath}/js/bootstrap.min.js"></script>

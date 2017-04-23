@@ -48,6 +48,7 @@ class KategoriePresenter extends BasePresenter
             ->addRule(Form::RANGE, 'kola musí být v rozsahu', [1, 120]);
         $form->addSubmit('submit', 'odeslat');
         $form->onSuccess[] = [$this, 'kategorieFormSucceeded'];
+        $this->renderForm($form);
         return $form;
     }
 
