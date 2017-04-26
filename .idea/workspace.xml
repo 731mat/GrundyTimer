@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a26bf463-be50-4010-b2e6-ef2432674441" name="Default" comment="pokus">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.htaccess" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/presenters/templates/Controller/default.latte" afterPath="$PROJECT_DIR$/app/presenters/templates/Controller/default.latte" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/presenters/templates/Vysledky/sub.latte" afterPath="$PROJECT_DIR$/app/presenters/templates/Vysledky/sub.latte" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grundybike.sql" afterPath="$PROJECT_DIR$/grundybike.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/temp/cache/Nette.RobotLoader/_Nette.RobotLoader/_18d16186be9a2587a408713ce1760bb7" afterPath="$PROJECT_DIR$/temp/cache/Nette.RobotLoader/_Nette.RobotLoader/_18d16186be9a2587a408713ce1760bb7" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/temp/cache/latte/templates-Controller-default.latte--e90543ff6a.php" afterPath="$PROJECT_DIR$/temp/cache/latte/templates-Controller-default.latte--e90543ff6a.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/temp/cache/latte/templates-Vysledky-sub.latte--a78a703b43.php" afterPath="$PROJECT_DIR$/temp/cache/latte/templates-Vysledky-sub.latte--a78a703b43.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -27,11 +20,21 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="default.latte" pinned="false" current-in-tab="true">
+      <file leaf-file-name="default.latte" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/presenters/templates/Controller/default.latte">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="90">
               <caret line="21" column="31" lean-forward="false" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="grundybike.sql" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/grundybike.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="543">
+              <caret line="177" column="0" lean-forward="true" selection-start-line="177" selection-start-column="0" selection-end-line="177" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -331,12 +334,12 @@
       <workItem from="1493189218031" duration="477000" />
       <workItem from="1493207431534" duration="1104000" />
       <workItem from="1493239200190" duration="2215000" />
-      <workItem from="1493241746078" duration="321000" />
+      <workItem from="1493241746078" duration="674000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="129852000" />
+    <option name="totallyTimeSpent" value="130205000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="24" width="1366" height="744" extended-state="6" />
@@ -763,18 +766,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grundybike.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="471">
-          <caret line="67" column="0" lean-forward="false" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/presenters/templates/Controller/default.latte">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="21" column="31" lean-forward="false" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grundybike.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="543">
+          <caret line="177" column="0" lean-forward="true" selection-start-line="177" selection-start-column="0" selection-end-line="177" selection-end-column="0" />
           <folding />
         </state>
       </provider>
