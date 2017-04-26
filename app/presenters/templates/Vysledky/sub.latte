@@ -1,7 +1,7 @@
 <table id="souetziciTable" class="display nowrap" width="100%" cellspacing="0">
     <thead>
     <tr>
-        <th>St. číslo</th>
+        <th>St.č</th>
         <th>Jméno</th>
         <th>Přijmeni</th>
         <th>Ročník</th>
@@ -14,7 +14,7 @@
     </thead>
     <tfoot>
     <tr>
-        <th>St. číslo</th>
+        <th>St.č</th>
         <th>Jméno</th>
         <th>Přijmeni</th>
         <th>Ročník</th>
@@ -34,16 +34,14 @@
         <td>{$soutezici['categoryName']}</td>
         {if !$soutezici['dfn']}
             <td>{$soutezici['rozdil']|date:'%H:%i:%s'}</td>
-            <td n:for="$x = 0; $x< $maxCulom;$x++">
-                {if !(sizeof($soutezici['casy']) <= $x)}
-                    {$soutezici['casy'][$x]|date:'%H:%i:%s'}
-                {/if}
-            </td>
         {else}
             <td>DFN</td>
-            <td n:for="$x = 0; $x< $maxCulom;$x++">
-            </td>
         {/if}
+        <td n:for="$x = 0; $x< $maxCulom;$x++">
+            {if !(sizeof($soutezici['casy']) <= $x)}
+                {$soutezici['casy'][$x]|date:'%H:%i:%s'}
+            {/if}
+        </td>
     </tr>
     </tbody>
 </table>
