@@ -24,8 +24,10 @@ class KategoriePresenter extends BasePresenter
 
 
     public function actionDelete($id){
-        $this->KategorieManager->delete($id);
-        $this->flashMessage("smazáno");
+        if($this->KategorieManager->delete($id))
+            $this->flashMessage("smazáno");
+        else
+            $this->flashMessage("v kategorii jsou uživatelé ! odstaň uživatele !!");
         $this->redirect("default");
     }
 

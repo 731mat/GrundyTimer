@@ -8,7 +8,7 @@ use App\Model\RaceManager;
 use App\Model\KategorieManager;
 use Nette\Application\UI\Form;
 
-class StartPresenter extends BasePresenter
+class StarterPresenter extends BasePresenter
 {
 
     private $raceManager;
@@ -29,7 +29,7 @@ class StartPresenter extends BasePresenter
 
     public function renderDefault()
     {
-
+        $this->redirect(':start');
     }
 
     protected function createComponentStartForm()
@@ -47,5 +47,39 @@ class StartPresenter extends BasePresenter
     {
         $this->raceManager->peopleStart($values);
         $this->flashMessage("Odstartováno !!!!!!!!");
+    }
+
+    protected function createComponentStopForm()
+    {
+        $form = new Form;
+        $form->addCheckboxList('category', 'název:', $this->kategorieManager->getPole());
+        $form->addSubmit('submit', 'odeslat');
+        $form->onSuccess[] = [$this, 'stopFormSucceeded'];
+        $this->renderForm($form);
+        return $form;
+    }
+
+    // volá se po úspěšném odeslání formuláře
+    public function stopFormSucceeded(Form $form, $values)
+    {
+        $this->raceManager->peopleStop($values);
+        $this->flashMessage("STOPnuto !!!!!!!!");
+    }
+
+    protected function createComponentResetForm()
+    {
+        $form = new Form;
+        $form->addCheckboxList('category', 'název:', $this->kategorieManager->getPole());
+        $form->addSubmit('submit', 'odeslat');
+        $form->onSuccess[] = [$this, 'resetFormSucceeded'];
+        $this->renderForm($form);
+        return $form;
+    }
+
+    // volá se po úspěšném odeslání formuláře
+    public function resetFormSucceeded(Form $form, $values)
+    {
+        $this->raceManager->peopleReset($values);
+        $this->flashMessage("reset !!!!!!!!");
     }
 }

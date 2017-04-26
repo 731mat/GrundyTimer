@@ -72,7 +72,13 @@ class SouteziciManager
 
     public function delete($id)
     {
+
         try{
+            $this->database->query('DELETE FROM `round` WHERE `round`.`idUser` = ?;', $id);
+        }catch(Exeption $e){
+            throw new Exception();
+        }
+     try{
             $this->database->table(self::TABLE_NAME)->where(self::COLUMN_ID, $id)->delete();
         }catch(Exeption $e){
             throw new Exception();

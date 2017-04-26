@@ -62,11 +62,14 @@ class KategorieManager
 
     public function delete($id)
     {
+        if ($this->database->query('SELECT COUNT(`id`) AS `pocet` FROM `user` WHERE `user`.`category` LIKE ?',$id)->fetch()['pocet'] > 0)
+            return false;
         try{
             $this->database->table(self::TABLE_NAME)->where(self::COLUMN_ID, $id)->delete();
         }catch(Exeption $e){
             throw new Exception();
         }
+        return true;
     }
     public function getPole(){
         $categories = $this->getAll();

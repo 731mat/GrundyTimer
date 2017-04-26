@@ -1,29 +1,94 @@
-{block content}
+<?php
+// source: /var/www/html/GrundyBike/app/presenters/templates/Vysledky/default.latte
+
+use Latte\Runtime as LR;
+
+class Template624fd45600 extends Latte\Runtime\Template
+{
+	public $blocks = [
+		'content' => 'blockContent',
+		'scripts' => 'blockScripts',
+		'head' => 'blockHead',
+	];
+
+	public $blockTypes = [
+		'content' => 'html',
+		'scripts' => 'html',
+		'head' => 'html',
+	];
+
+
+	function main()
+	{
+		extract($this->params);
+		if ($this->getParentName()) return get_defined_vars();
+		$this->renderBlock('content', get_defined_vars());
+?>
+
+<?php
+		$this->renderBlock('scripts', get_defined_vars());
+?>
+
+
+<?php
+		$this->renderBlock('head', get_defined_vars());
+		return get_defined_vars();
+	}
+
+
+	function prepare()
+	{
+		extract($this->params);
+		if (isset($this->params['kat'])) trigger_error('Variable $kat overwritten in foreach on line 5');
+		Nette\Bridges\ApplicationLatte\UIRuntime::initialize($this, $this->parentName, $this->blocks);
+		
+	}
+
+
+	function blockContent($_args)
+	{
+		extract($_args);
+?>
 
     <div class="row">
             <label>Filter:</label>
-            {foreach $dataKategorie as $kat}
+<?php
+		$iterations = 0;
+		foreach ($dataKategorie as $kat) {
+?>
                 <span class="button-checkbox">
                 <button type="button" class="btn" data-color="success">
-                        {$kat->name} <span class="badge">{$kat->count_round} kol</span></button>
-                <input type="checkbox" class="hidden" name="kategorie" onchange="filtr()" value={$kat->name} />
+                        <?php echo LR\Filters::escapeHtmlText($kat->name) /* line 8 */ ?> <span class="badge"><?php
+			echo LR\Filters::escapeHtmlText($kat->count_round) /* line 8 */ ?> kol</span></button>
+                <input type="checkbox" class="hidden" name="kategorie" onchange="filtr()" value=<?php echo LR\Filters::escapeHtmlAttrUnquoted($kat->name) /* line 9 */ ?>>
             </span>
-            {/foreach}
+<?php
+			$iterations++;
+		}
+?>
         <hr>
     </div>
 
 
-    {include 'sub.latte'}
+<?php
+		/* line 16 */
+		$this->createTemplate('sub.latte', $this->params, "include")->renderToContentType('html');
+?>
 
 
 
 
 
 
-{/block}
+<?php
+	}
 
-{block scripts}
-    {include parent}
+
+	function blockScripts($_args)
+	{
+		extract($_args);
+		$this->renderBlockParent('scripts', get_defined_vars());
+?>
     <script>
         $('#souetziciTable').dataTable( {
             "lengthChange": false,
@@ -34,8 +99,8 @@
                     extend: 'pdf',
                     text: 'Uložit PDF',
                     orientation: 'landscape',
-                    filename:{$dataInfo->name|webalize."-ALL"},
-                    title:{$dataInfo->name." - přehled všech"},
+                    filename:<?php echo LR\Filters::escapeJs(call_user_func($this->filters->webalize, $dataInfo->name."-ALL")) /* line 37 */ ?>,
+                    title:<?php echo LR\Filters::escapeJs($dataInfo->name." - přehled všech") /* line 38 */ ?>,
                     message:'©GrundyTimer',
                     exportOptions: {
                         modifier: {
@@ -46,7 +111,7 @@
                 {
                     extend: 'print',
                     text: 'vytiskni',
-                    title:{$dataInfo->name." - Přehled všch"},
+                    title:<?php echo LR\Filters::escapeJs($dataInfo->name." - Přehled všch") /* line 49 */ ?>,
                     message:'©GrundyTimer',
                     exportOptions: {
                         stripHtml: false,
@@ -138,8 +203,13 @@
             });
         });
     </script>
-{/block}
+<?php
+	}
 
 
-{block head}
-{/block}
+	function blockHead($_args)
+	{
+		
+	}
+
+}

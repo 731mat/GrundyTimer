@@ -62,6 +62,48 @@ class RaceManager
         }
         $this->database->query($dotazy1);
     }
+    public function peopleReset($arrayKategorie){
+        //Vygenerování dotazu pro zapsání do tabulky uživatel zapíče cas a pocet kol
+        $dotazy = "";
+        // for kazde smycky vyhodi jedno ID kategorie
+        foreach ($arrayKategorie['category'] as $kategorie){
+            // dotazy se ukadaji za sebe do promenne
+            $pocetKol = $this->kategorieManager->getById($kategorie);
+            $pocetKol = $pocetKol['count_round'];
+            $dotazy = $dotazy."UPDATE `user` SET `start_time` = NULL, `finish_time` = NULL, `round_time` = NULL, `countRound` = 0, `dfn` = 0 WHERE `user`.`category` = ".$kategorie.";";
+        }
+        // ulozene dotazy se najednou vsechny provedou
+        $this->database->query($dotazy);
+
+
+        $dotazy1 = "";
+        // vytahnutí indexu vsech soutezicich lidi
+        $indexyPeople = $this->getPeopleInCategory($arrayKategorie);
+        foreach ($indexyPeople as $people){
+            foreach ($people as $index){
+                $dotazy1 = $dotazy1."DELETE FROM `round` WHERE `round`.`idUser` = ".$index.";";
+            }
+        }
+        $this->database->query($dotazy1);
+    }
+
+
+    public function peopleStop($arrayKategorie){
+        //Vygenerování dotazu pro zapsání do tabulky uživatel zapíče cas a pocet kol
+        $dotazy = "";
+        // for kazde smycky vyhodi jedno ID kategorie
+        foreach ($arrayKategorie['category'] as $kategorie){
+            // dotazy se ukadaji za sebe do promenne
+            $pocetKol = $this->kategorieManager->getById($kategorie);
+            $pocetKol = $pocetKol['count_round'];
+            $dotazy = $dotazy."UPDATE `user` SET `finish_time` = '23:59:59', `round_time` = NULL, `countRound` = 0, `dfn` = 1 WHERE `user`.`category` = ".$kategorie." AND `user`.`finish_time` IS NULL;";
+        }
+        // ulozene dotazy se najednou vsechny provedou
+        $this->database->query($dotazy);
+    }
+
+
+
     //dotaz INSERT INTO `round` (`id`, `time`, `idUser`) VALUES (NULL, TIMEDIFF( TIMEDIFF( time(now()), (SELECT user.start_time FROM user WHERE user.id = ?)), (SELECT IF((SEC_TO_TIME(SUM(time_to_sec(`kolo`.`time`))) IS NULL), '00:00:00', (SEC_TO_TIME( SUM(time_to_sec(`kolo`.`time`))))) FROM `round` AS `kolo` WHERE `kolo`.`idUser` = ? )) , ?)
 
     public function addRound($id){

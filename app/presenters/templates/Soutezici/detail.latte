@@ -8,7 +8,7 @@
         <table class="table table-bordered" width="100%">
             <thead>
             {foreach $dataCasy as $index => $cas}
-                <th>kolo {$index}</th>
+                <th>kolo {$index+1}</th>
             {/foreach}
             </thead>
             <tbody>
@@ -51,7 +51,7 @@
                             type: "line",
                             dataPoints: [
                                 {foreach $dataCasy as $cas}
-                                {  y: {$cas->time->h*3600 + $cas->time->i*60 + $cas->time->s}, legend:"pokus"},
+                                {  y: {$cas->time->h*3600 + $cas->time->i*60 + $cas->time->s},indexLabel:{$cas->time|date:'%H:%i:%s'}, legend:"pokus"},
                                 {/foreach}
                             ]
                         }

@@ -1,34 +1,7 @@
 {block content}
     <a n:href="Vysledky:default" class="btn btn-warning" role="button"><i class="fa fa-step-backward"></i></a>
     <br>
-    <table id="souetziciTable" class="display nowrap" width="100%" cellspacing="0">
-        <thead>
-        <tr>
-            <th>St. číslo</th>
-            <th>Jméno</th>
-            <th>Přijmeni</th>
-            <th>Ročník</th>
-            <th>Kategorie</th>
-            <th>Čas</th>
-            {for $i = 0; $i < $maxCulom; $i++ }
-                <th>kolo{$i+1}</th>
-            {/for}
-        </tr>
-        </thead>
-        <tbody>
-        <tr n:foreach="$data as $soutezici">
-            <td>{$soutezici['start_number']}</td>
-            <td>{$soutezici['first_name']}</td>
-            <td>{$soutezici['last_name']}</td>
-            <td>{$soutezici['birth_year']}</td>
-            <td>{$soutezici['categoryName']}</td>
-            <td>{$soutezici['rozdil']|date:'%H:%i:%s'}</td>
-            <td n:foreach="$soutezici['casy'] as $cas">
-                {$cas|date:'%H:%i:%s'}
-            </td>
-        </tr>
-        </tbody>
-    </table>
+    {include 'sub.latte'}
 
 {/block}
 
