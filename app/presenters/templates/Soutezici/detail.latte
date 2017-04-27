@@ -14,7 +14,7 @@
             <tbody>
             <tr>
             {foreach $dataCasy as $index => $cas}
-              <td>{$cas->time|date:'%H:%i:%s'}</td>
+              <td>{$cas->time|date:'%H:%I:%S'}</td>
             {/foreach}
             </tr>
             </tbody>
@@ -24,6 +24,16 @@
         <h4 class="text-center">Casy odjetých kol v grafu</h4>
         <div id="chartContainer" style="height: 300px; width: 100%;"></div>
     </div>
+<br>
+    <pre>
+    TIME
+> start    : {$data->start_time|date:'%H:%I:%S'}
+-> round   : {$data->round_time|date:'%H:%I:%S'}
+--> finish : {$data->finish_time|date:'%H:%I:%S'}
+
+>dfn       : {$data->dfn}
+>zde       : {$data->chacked}
+</pre>
 {/block}
 
 {block scripts}

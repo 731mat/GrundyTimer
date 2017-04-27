@@ -52,3 +52,22 @@ form .error {
 .navbar-default{
 	background-color: #eeeeee;
 }
+
+.col-sm-13{
+	width: 10%;
+	float: left;
+	position: relative;
+	min-height: 1px;
+	padding-right: 15px;
+	padding-left: 15px;
+	padding-top: 15px;
+}
+
+.buttonController{
+	font-size: 120%;
+}
+
+#stNumber{
+	font-size: 800%;
+	height: 200px;
+}

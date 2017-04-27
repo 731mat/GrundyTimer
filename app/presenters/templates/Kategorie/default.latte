@@ -15,7 +15,7 @@
             <td>{$kategorie->id}</td>
             <td>{$kategorie->name}</td>
             <td>{$kategorie->count_round}</td>
-            <td>{$kategorie->min_time|date:'%H:%i:%s'}</td>
+            <td>{$kategorie->min_time|date:'%H:%I:%S'}</td>
             <td><a n:href="Vysledky:kategorie $kategorie->id" class="btn btn-success" role="button"><i class="fa fa-list"></i></a>
                 <a n:href="edit $kategorie->id" class="btn btn-primary" role="button"><i class="fa fa-edit"></i></a>
                 <a n:href="delete $kategorie->id" class="btn btn-danger" role="button" onclick="return confirm('Opravdu to chceš?');"><i class="fa fa-trash"></i></a>

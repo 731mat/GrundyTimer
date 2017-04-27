@@ -36,7 +36,7 @@
                     orientation: 'landscape',
                     filename:{$dataInfo->name|webalize."-ALL"},
                     title:{$dataInfo->name." - přehled všech"},
-                    message:'©GrundyTimer',
+                    message:{$dataInfo->adress}+"  "+{$dataInfo->date|date:'%d.%m.%Y'}+"      -   ©GrundyTimer  časomíra ",
                     exportOptions: {
                         modifier: {
                             page: 'current'

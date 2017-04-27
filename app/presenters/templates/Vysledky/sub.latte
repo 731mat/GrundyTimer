@@ -33,13 +33,13 @@
         <td>{$soutezici['birth_year']}</td>
         <td>{$soutezici['categoryName']}</td>
         {if !$soutezici['dfn']}
-            <td>{$soutezici['rozdil']|date:'%H:%i:%s'}</td>
+            <td>{$soutezici['rozdil']|date:'%H:%I:%S'}</td>
         {else}
             <td>DFN</td>
         {/if}
         <td n:for="$x = 0; $x< $maxCulom;$x++">
             {if !(sizeof($soutezici['casy']) <= $x)}
-                {$soutezici['casy'][$x]|date:'%H:%i:%s'}
+                {$soutezici['casy'][$x]|date:'%H:%I:%S'}
             {/if}
         </td>
     </tr>

@@ -32,17 +32,34 @@
 	<nav class="navbar navbar-default">
 		<div class="container-fluid">
 			<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
 
 				<a class="navbar-brand" n:href="Homepage:default"><i class="fa fa-black-tie" aria-hidden="true"></i> GrundyTimer</a>
 			</div>
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
 				<li{ifCurrent Homepage:} class="active"{/ifCurrent}><a n:href="Homepage:default"><i class="fa fa-info-circle"></i> Info</a></li>
 				<li{ifCurrent Vysledky:} class="active"{/ifCurrent}><a n:href="Vysledky:default"><i class="fa fa-table"></i> Vysledky</a></li>
                 {if $user->loggedIn}
+				<!-- SOUTĚŽICI -->
 					<li{ifCurrent Soutezici:} class="active"{/ifCurrent}><a n:href="Soutezici:default"><i class="fa fa-user-circle-o"></i> Soutěžící</a></li>
+				<!-- KATEGORIE -->
 					<li{ifCurrent Kategorie:} class="active"{/ifCurrent}><a n:href="Kategorie:default"><i class="fa fa-bars"></i> Kategorie</a></li>
-					<li{ifCurrent Controller:} class="active"{/ifCurrent}><a n:href="Controller:default"><i class="fa fa-tablet"></i> Tablet</a></li>
-
+				<!-- TABLET -->
+					<li class="dropdown{ifCurrent Controller:} active{/ifCurrent}">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-tablet"></i> Tablet
+							<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li{ifCurrent Controller:tabletButton} class="active"{/ifCurrent}><a n:href="Controller:tabletbutton">tlacitka</a></li>
+							<li{ifCurrent Controller:tabletNumber} class="active"{/ifCurrent}><a n:href="Controller:tabletnumber">cisla</a></li>
+						</ul>
+					</li>
+				<!-- STARTER -->
 					<li class="dropdown">
 						<a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-sun-o"></i> Starter
 							<span class="caret"></span></a>
@@ -52,7 +69,7 @@
 							<li{ifCurrent Starter:reset } class="active"{/ifCurrent}><a n:href="Starter:reset"><i class="fa fa-repeat"></i> Reset</a></li>
 							</ul>
 					</li>
-
+				<!-- DISPLAY-->
 					<li class="dropdown">
 						<a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-television"></i> Display
 							<span class="caret"></span></a>
@@ -67,7 +84,7 @@
 							<li{ifCurrent Controller:display 8} class="active"{/ifCurrent}><a n:href="Controller:display 8">8</a></li>
 						</ul>
 					</li>
-				{/if}
+				{/if}<!-- /.pouze pro přihlášené -->
 
 			</ul>
 
@@ -79,8 +96,8 @@
 					<li><a n:href="Sign:in"><span class="fa fa-sign-in"></span> Login</a></li>
 				{/if}
 			</ul>
-
-		</div>
+			</div><!-- /.navbar-collapse -->
+		</div><!-- /.container-fluid -->
 	</nav>
 	<div class="container">
 

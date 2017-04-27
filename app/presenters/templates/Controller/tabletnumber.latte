@@ -1,0 +1,36 @@
+{block content}
+    <div class="col-lg-4"></div>
+    <div class="col-lg-4 text-center">
+    <input type="number" class="form-control" id="stNumber">
+    <button class="btn btn-success" tabindex="0" onclick="kolo(document.getElementById('stNumber').value)">Odeslat</button>
+    </div>
+{/block}
+
+{block scripts}
+    {include parent}
+    <script>
+        function kolo(id) {
+            $("body").css("background","white");
+            $.get("kolo/" + id, function(data, status){
+                if(data.odpoved == "true")
+                    $("body").css("background","green");
+                else
+                    $("body").css("background","black");
+            });
+            document.getElementById('stNumber').value = '';
+            setTimeout(function(){
+                $("body").css("background","white");
+            }, 700);
+
+        }
+        $('input[type=number]').on('keydown', function(e) {
+            if (e.which == 13 || e.keyCode == 13) {
+                kolo(document.getElementById('stNumber').value);
+            }
+        });
+    </script>
+{/block}
+
+
+{block head}
+{/block}

@@ -26,8 +26,11 @@ class ControllerPresenter extends BasePresenter
         $this->souteziciManager = $souteziciManager;
     }
 
-    public function renderDefault(){
-        $this->template->tlacitka = $this->souteziciManager->getAll();
+    public function renderTabletButton(){
+        $this->template->tlacitka = $this->souteziciManager->getPeopleStarted();
+    }
+
+    public function renderTabletNumber(){
     }
 
     public function renderDisplay($id){
