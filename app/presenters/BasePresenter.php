@@ -6,6 +6,7 @@ use Nette;
 use App\Model;
 use Nette\Security\User;
 use Nette\Security\Authenticator;
+use Nette\Forms\Controls;
 
 
 /**
@@ -51,6 +52,8 @@ abstract class BasePresenter extends Nette\Application\UI\Presenter
                 $control->getControlPrototype()->addClass('form-control');
             } elseif ($control instanceof Controls\Checkbox || $control instanceof Controls\CheckboxList || $control instanceof Controls\RadioList) {
                 $control->getSeparatorPrototype()->setName('div')->addClass($control->getControlPrototype()->type);
+            } elseif ($control instanceof Controls\TextInput ) {
+                dump($control);
             }
         }
     }

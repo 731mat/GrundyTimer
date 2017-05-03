@@ -24,8 +24,9 @@
 
         }
         $('input[type=number]').on('keydown', function(e) {
-            if (e.which == 13 || e.keyCode == 13) {
+            if (e.which == 13 || e.keyCode == 13 || e.which == 9 || e.keyCode == 9) {
                 kolo(document.getElementById('stNumber').value);
+                $('#stNumber').focus();
             }
         });
     </script>

@@ -6,6 +6,7 @@
             <th>Startovní číslo</th>
             <th>Jmeno</th>
             <th>Přijmení</th>
+            <th>tým</th>
             <th>datum narození</th>
             <th>kategorie</th>
             <th>ZDE</th>
@@ -17,6 +18,7 @@
             <td>{$soutezici->start_number}</td>
             <td>{$soutezici->first_name}</td>
             <td>{$soutezici->last_name}</td>
+            <td>{$soutezici->team}</td>
             <td>{$soutezici->birth_year}</td>
             <td>{$soutezici->ref('category','category')->name}</td>
             <td><a n:href="chacked $soutezici->id">

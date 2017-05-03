@@ -37,13 +37,20 @@ class KategoriePresenter extends BasePresenter
     }
     public function renderEdit($id){
         $kategorie = $this->KategorieManager->getById($id);
-        $this['kategorieForm']->setDefaults($kategorie);
+        $vystup = array();
+        $vystup['min_time'] = $kategorie['min_time']->format("%H:%I:%S");
+        $vystup['name'] = $kategorie['name'];
+        $vystup['count_round'] = $kategorie['count_round'];
+        $this['kategorieForm']->setDefaults($vystup);
     }
 
     protected function createComponentKategorieForm()
     {
         $form = new Form;
         $form->addText('name', 'název:');
+        $form->addText('min_time','Minimální čas:')
+            ->setRequired()
+            ->addRule(Form::PATTERN, 'HH:MM:SS', '([0-1]?\d|2[0-3]):([0-5]?\d):([0-5]?\d)');
         $form->addText('count_round', 'pocet kol:')
             ->setType('number')
             ->setRequired(FALSE)

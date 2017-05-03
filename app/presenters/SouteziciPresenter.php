@@ -57,6 +57,9 @@ class SouteziciPresenter extends BasePresenter
         $form->addText('last_name', 'přijmeni:')
             ->setRequired('Zadejte prosím příjmení')
             ->addRule(Form::MIN_LENGTH, 'musí mít min 3 znaky', 3);
+        $form->addText('team', 'Tým:')
+            ->setRequired('Zadejte prosím team')
+            ->addRule(Form::MIN_LENGTH, 'musí mít min 3 znaky', 3);
         $form->addText('birth_year', 'datum narozeni:')
             ->setType('number')
             ->setRequired(FALSE)
